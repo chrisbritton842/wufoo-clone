@@ -11,8 +11,4 @@ class Form(db.Model):
     input_labels = db.Column(db.JSONB)
     user_id = db.Column(db.Integer)
     all_entries = db.Column(db.Integer)
-    
 
-    username = db.Column(db.String(40), nullable=False, unique=True)
-    email = db.Column(db.String(255), nullable=False, unique=True)
-    hashed_password = db.Column(db.String(255), nullable=False)
