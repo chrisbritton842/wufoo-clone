@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 
 const SplashPage = () => {
     return (
@@ -33,3 +33,5 @@ const SplashPage = () => {
         </div>
     )
 }
+
+export default SplashPage;
