@@ -11,7 +11,6 @@ const SplashPage = () => {
                     <div className="nav-btns">
                         <button className="top-sign-up">SIGN UP</button>
                         <button className="top-login">LOGIN</button>
-
                     </div>
                 </div>
             </div>
@@ -25,9 +24,12 @@ const SplashPage = () => {
                     </div>
                 </div>
                 <div className="right-banner">
-
+                    <img className="dinosaur-form-img" src="https://www.wufoo.com/wp-content/uploads/2019/10/wufoo-online-form-builder.png" alt="Dinosaurs building an html form"/>
                 </div>
             </div>
+            <nav className="contact-me-nav">
+
+            </nav>
         </div>
     )
 }
