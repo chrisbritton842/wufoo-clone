@@ -13,6 +13,8 @@ class Entry(db.Model):
     text = db.Column(db.JSONB)
     textarea = db.Column(db.JSONB)
     url = db.Column(db.JSONB)
-    from_id = db.Column(db.Integer)
+    form_id = db.Column(db.Integer, db.ForeignKey('forms.id'), nullable=False)
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.utc_timestamp())
+
+    form = db.relationship("Form", back_populates="entries")

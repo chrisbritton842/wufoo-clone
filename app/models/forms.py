@@ -17,3 +17,4 @@ class Form(db.Model):
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.utc_timestamp())
 
     owner = db.relationship("User", back_populates="forms")
+    entries = db.relationship("Entry", back_populates="form")
