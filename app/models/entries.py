@@ -18,3 +18,19 @@ class Entry(db.Model):
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.utc_timestamp())
 
     form = db.relationship("Form", back_populates="entries")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'date': self.date,
+            'email': self.email,
+            'number': self.number,
+            'telephone': self.telephone,
+            'text': self.text,
+            'textarea': self.textarea,
+            'url': self.url,
+            'form_id': self.form_id,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            'form': self.form
+        }
