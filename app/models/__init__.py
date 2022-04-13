@@ -1,2 +1,4 @@
 from .db import db
-from .models import User, Form, Entry
+from .entry import Entry
+from .form import Form
+from .user import User
