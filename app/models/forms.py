@@ -18,3 +18,19 @@ class Form(db.Model):
 
     owner = db.relationship("User", back_populates="forms")
     entries = db.relationship("Entry", back_populates="form")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'form_url': self.form_url,
+            'title': self.title,
+            'field_type': self.field_type,
+            'field_labels': self.field_labels,
+            'input_labels': self.input_labels,
+            'user_id': self.user_id,
+            'all_entries': self.all_entries,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            'owner': self.owner,
+            'entries': [e.to_dict() for e in self.entries]
+        }
