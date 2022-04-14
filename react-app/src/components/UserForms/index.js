@@ -6,6 +6,11 @@ import './UserForms.css'
 
 const UserForms = () => {
     const dispatch = useDispatch()
+    const user_name = useSelector((state) => state.session.user.username)
+
+    const handleLogout = () => {
+        dispatch(sessionActions.logout())
+    };
 
 
     return (
@@ -21,11 +26,11 @@ const UserForms = () => {
                         <div className="avatar-circle-div">
 
                         </div>
-                        <label for="check">Username</label>
+                        <label for="check">{user_name}</label>
                         <input id="check" type="checkbox" name="menu" />
                         <ul class="submenu">
                             <li>
-                                <div className="logout-div">Logout</div>
+                                <div className="logout-div" onClick={handleLogout}>Logout</div>
                             </li>
                         </ul>
                     </li>
