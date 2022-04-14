@@ -1,25 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './UserForms.css'
 
 const UserForms = () => {
     return (
         <div className="user-forms-wrapper">
-            <header className="user-forms-header">
-                <Link to="/">
+            <nav className="user-forms-header">
+                <ul id="menu">
+                    <li className="logo-li">
+                        <Link to="/">
 
-                </Link>
-                <div className="drop-down-div">
-                    <div className="avatar-circle-div">
+                        </Link>
+                    </li>
+                    <li>
+                        <div className="avatar-circle-div">
 
-                    </div>
-                    <div className="username-div">
-
-                    </div>
-                    <div className="dropdown-arrow-div">
-
-                    </div>
-                </div>
-            </header>
+                        </div>
+                        <label for="check">Username</label>
+                        <input id="check" type="checkbox" name="menu" />
+                        <ul class="submenu">
+                            <li>
+                                <div className="logout-div">Logout</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
             <div className="top-band">
                 <div className="h1-div">
                     <h1>Forms</h1>
