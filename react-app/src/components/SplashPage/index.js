@@ -1,6 +1,23 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 const SplashPage = () => {
+    let history = useHistory();
+
+    const handleSignUp = () => {
+        history.push("/sign-up");
+    };
+
+    const handleLogin = () => {
+        history.push("/login")
+    };
+
+    const handleDemo = () => {
+
+    }
+
+
+
     return (
         <div className="splash-wrapper">
             <div className="header-bar">
@@ -9,8 +26,8 @@ const SplashPage = () => {
 
                     </div>
                     <div className="nav-btns">
-                        <button className="top-sign-up">SIGN UP</button>
-                        <button className="top-login">LOGIN</button>
+                        <button type="button" className="top-sign-up" onClick={handleSignUp}>SIGN UP</button>
+                        <button type="button" className="top-login" onClick={handleLogin}>LOGIN</button>
                     </div>
                 </div>
             </div>
@@ -19,8 +36,8 @@ const SplashPage = () => {
                     <h1>Easy-to-Use Online Form Builder For Every Organization</h1>
                     <p>Cloud-based form builder that makes it easy to create registration forms, application forms, surveys, contact forms, payment forms and more.</p>
                     <div className="banner-btn-row">
-                        <button className="sign-up-free">SIGN UP FREE</button>
-                        <button className="live-demo">LIVE DEMO</button>
+                        <button type="button" className="sign-up-free" onClick={handleSignUp}>SIGN UP FREE</button>
+                        <button type="button" className="live-demo" onClick={handleDemo}>LIVE DEMO</button>
                     </div>
                 </div>
                 <div className="right-banner">
