@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import './UserForms.css'
 
 const UserForms = () => {
+    const dispatch = useDispatch()
+
+
     return (
         <div className="user-forms-wrapper">
             <nav className="user-forms-header">
