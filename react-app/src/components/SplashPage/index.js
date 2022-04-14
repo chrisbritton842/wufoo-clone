@@ -4,16 +4,16 @@ import { useHistory } from "react-router-dom";
 const SplashPage = () => {
     let history = useHistory();
 
-    const handleSignUp = () => {
-        history.push("/sign-up");
+    function handleSignUp() {
+        history.push('/sign-up');
     };
 
-    const handleLogin = () => {
-        history.push("/login")
+    function handleLogin() {
+        history.push('/login');
     };
 
     const handleDemo = () => {
-
+        return
     }
 
 
