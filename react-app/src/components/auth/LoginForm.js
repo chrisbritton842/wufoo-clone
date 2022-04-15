@@ -15,6 +15,9 @@ const LoginForm = () => {
   let validPassword;
   let validUsername;
 
+  console.log('Errors', errors)
+  console.log('Logic', errors.find(e => e.includes('email')))
+
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
@@ -86,11 +89,9 @@ const LoginForm = () => {
           {!showSignup && (
             <form onSubmit={onLogin}>
               <div>
-                {errors.map((error, ind) => (
-                  <div key={ind}>{error}</div>
-                ))}
-              </div>
-              <div>
+                {errors.find(e => e.includes('email')) && (
+                  <span>{errors.find(e => e.includes('email')).slice(8)}</span>
+                )}
                 <input
                   name='email'
                   type='email'
@@ -110,6 +111,9 @@ const LoginForm = () => {
                 </span>
               </div>
               <div className="password-input-div">
+                {errors.find(e => e.includes('password')) && (
+                  <span>{errors.find(e => e.includes('password')).slice(11)}</span>
+                )}
                 <input
                   name='password'
                   type='password'
