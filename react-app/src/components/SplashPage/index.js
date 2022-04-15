@@ -5,7 +5,7 @@ const SplashPage = () => {
     let history = useHistory();
 
     function handleSignUp() {
-        history.push('/sign-up');
+        history.push('/signup');
     };
 
     function handleLogin() {

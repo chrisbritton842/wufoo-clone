@@ -6,7 +6,7 @@ import './UserForms.css'
 
 const UserForms = () => {
     const dispatch = useDispatch()
-    const user_name = useSelector((state) => state.session.user.username)
+    const userName = useSelector((state) => state.session.user.username)
 
     const handleLogout = () => {
         dispatch(sessionActions.logout())
@@ -26,7 +26,7 @@ const UserForms = () => {
                         <div className="avatar-circle-div">
 
                         </div>
-                        <label for="check">{user_name}</label>
+                        <label for="check">{userName}</label>
                         <input id="check" type="checkbox" name="menu" />
                         <ul class="submenu">
                             <li>
