@@ -1,7 +1,11 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, Redirect } from "react-router-dom";
+import { login } from '../../store/session';
 
 const SplashPage = () => {
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.session.user);
     let history = useHistory();
 
     function handleSignUp() {
@@ -12,11 +16,14 @@ const SplashPage = () => {
         history.push('/login');
     };
 
-    const handleDemo = () => {
-        return
+    const handleDemo = (e) => {
+        e.preventDefault();
+        dispatch(login('demo@aa.io', 'password'));
+    };
+
+    if (user) {
+        return <Redirect to={`/forms/${user.id}`} />;
     }
-
-
 
     return (
         <div className="splash-wrapper">
