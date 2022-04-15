@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './UserForms.css'
 
 const UserForms = () => {
-    const dispatch = useDispatch()
-    const userName = useSelector((state) => state.session.user.username)
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.session.user);
+    let history = useHistory();
 
     const handleLogout = () => {
-        dispatch(sessionActions.logout())
+        dispatch(sessionActions.logout());
+    };
+
+    function handleCreateForm() {
+        history.push(`/build/${user.id}`);
     };
 
 
@@ -26,7 +31,7 @@ const UserForms = () => {
                         <div className="avatar-circle-div">
 
                         </div>
-                        <label className="user-forms-username" for="check">{userName}</label>
+                        <label className="user-forms-username" for="check">{user.username}</label>
                         <input id="check" type="checkbox" name="menu" />
                         <ul class="submenu">
                             <li>
@@ -41,7 +46,7 @@ const UserForms = () => {
                     <h1>Forms</h1>
                 </div>
                 <div className="create-btn-div">
-                    <button className="create-form">
+                    <button type="button" className="create-form" onClick={handleCreateForm}>
                         Create Form
                     </button>
                 </div>

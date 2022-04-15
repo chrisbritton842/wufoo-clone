@@ -15,9 +15,6 @@ const LoginForm = () => {
   let validPassword;
   let validUsername;
 
-  console.log('Errors', errors)
-  console.log('Logic', errors.find(e => e.includes('email')))
-
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));

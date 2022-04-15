@@ -8,6 +8,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import SplashPage from './components/SplashPage';
 import UserForms from './components/UserForms';
+import BuildForm from './components/BuildForm';
 import { authenticate } from './store/session';
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <ProtectedRoute path='/forms/:userId' exact={true} >
           <UserForms />
+        </ProtectedRoute>
+        <ProtectedRoute path='/build/:userId' exact={true} >
+          <BuildForm />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
