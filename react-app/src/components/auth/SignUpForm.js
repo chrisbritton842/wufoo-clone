@@ -8,19 +8,21 @@ const SignUpForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [validEmail, setValidEmail] = useState(false);
-  // const [validPassword, setValidPassword] = useState(false);
-  // const [validUsername, setValidUsername] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  let history = useHistory()
+  let history = useHistory();
+  let validEmail;
+  let validPassword;
+  let validUsername;
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    const data = await dispatch(signUp(username, email, password));
-    if (data) {
-      console.log("DATA: ", data)
-      setErrors(data)
+    if (validEmail && validPassword && validUsername) {
+      const data = await dispatch(signUp(username, email, password));
+      if (data) {
+        console.log("DATA: ", data)
+        setErrors(data)
+      }
     }
   };
 
@@ -35,12 +37,6 @@ const SignUpForm = () => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
-
-  let validEmail;
-  let validPassword;
-  let validUsername;
-
-
 
   if (email.includes('@')) {
     validEmail = true;
