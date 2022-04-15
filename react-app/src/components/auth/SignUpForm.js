@@ -57,8 +57,8 @@ const SignUpForm = () => {
 
 
   if (user) {
-    return <Redirect to='/' />;
-  }
+    return <Redirect to={`/forms/${user.id}`} />;
+  };
 
   const handleLogin = () => {
     history.push('/login');
@@ -94,7 +94,7 @@ const SignUpForm = () => {
                 <label>
                   <span>EMAIL ADDRESS</span>
                   {!validEmail && (
-                    <span>Invalid email</span>
+                    <span>Your valid email</span>
                   )}
                 </label>
                 <input
