@@ -16,12 +16,12 @@ const BuildForm = () => {
             <div className="build-container">
                 <div className="nav-div">
                     <ul id="build-menu">
-                        <li className="logo-li">
+                        <li className="build-menu-li">
                             <Link to="/">
 
                             </Link>
                         </li>
-                        <li>
+                        <li className="build-menu-li">
                             <label className="build-form-label" for="check">Account</label>
                             <input id="check" type="checkbox" name="menu" />
                             <ul class="build-submenu">

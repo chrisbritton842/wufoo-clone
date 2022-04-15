@@ -1,0 +1,79 @@
+.build-form-wrapper{
+    display:flex;
+    justify-content: center;
+}
+
+#build-menu{
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+    width:1000px;
+    height:80px;
+    margin:0;
+    padding:0 10px;
+    background:#e66760;
+    color:#ffda68;
+    box-shadow:0 -1px rgba(0,0,0,.5) inset;
+}
+
+.build-menu-li{
+    float:left;
+    list-style-type:none;
+    position:relative;
+}
+
+.build-form-label{
+    position:relative;
+    display:block;
+    padding:0 18px 0 12px;
+    line-height:80px;
+    transition:background 0.3s;
+    cursor:pointer;
+}
+
+.build-form-label:after{
+    content:"";
+    position:absolute;
+    display:block;
+    top:50%;
+    right:5px;
+    width:0;
+    height:0;
+    border-top:4px solid rgba(255,255,255,.5);
+    border-bottom:0 solid rgba(255,255,255,.5);
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    transition:border-bottom .1s, border-top .1s .1s;
+}
+
+.build-submenu{
+    max-height:0;
+    padding:0;
+    overflow:hidden;
+    list-style-type:none;
+    background:white;
+    box-shadow:0 0 1px rgba(0,0,0,.3);
+    transition:max-height 0.5s ease-out;
+    position:absolute;
+    min-width:100%;
+}
+
+.build-logout-div{
+    display:block;
+    padding:12px;
+    color:black;
+    text-decoration:none;
+    box-shadow:0 -1px rgba(0,0,0,.5) inset;
+    transition:background .3s;
+    white-space:nowrap;
+}
+
+.build-logout-div:hover{
+    background:rgba(0,0,0,.3);
+}
+
+#check{display:none}
+#check:checked ~ .build-submenu{
+    max-height:300px;
+    transition:max-height 0.5s ease-in;
+}
