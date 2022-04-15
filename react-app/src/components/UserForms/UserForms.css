@@ -1,4 +1,4 @@
-ul#menu{
+#menu{
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -11,13 +11,13 @@ ul#menu{
     box-shadow:0 -1px rgba(0,0,0,.5) inset;
   }
 
-ul#menu > li{
+#menu > li{
     float:left;
     list-style-type:none;
     position:relative;
   }
 
-label{
+.user-forms-username{
     position:relative;
     display:block;
     padding:0 18px 0 12px;
@@ -41,7 +41,7 @@ label:after{
     transition:border-bottom .1s, border-top .1s .1s;
     }
 
-ul.submenu{
+.submenu{
     max-height:0;
     padding:0;
     overflow:hidden;
@@ -54,7 +54,7 @@ ul.submenu{
     cursor:pointer;
     }
 
-ul.submenu li div{
+.logout-div{
     display:block;
     padding:12px;
     color:#ddd;
@@ -64,12 +64,12 @@ ul.submenu li div{
     white-space:nowrap;
     }
 
-ul.submenu li div:hover{
+.logout-div:hover{
     background:rgba(0,0,0,.3);
     }
 
-    input{display:none}
-    input:checked ~ ul.submenu{
+    #check{display:none}
+    #check:checked ~ ul.submenu{
       max-height:300px;
       transition:max-height 0.5s ease-in;
     }

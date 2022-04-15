@@ -26,7 +26,7 @@ const UserForms = () => {
                         <div className="avatar-circle-div">
 
                         </div>
-                        <label for="check">{userName}</label>
+                        <label className="user-forms-username" for="check">{userName}</label>
                         <input id="check" type="checkbox" name="menu" />
                         <ul class="submenu">
                             <li>

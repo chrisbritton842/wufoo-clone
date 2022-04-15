@@ -8,18 +8,19 @@ const SignUpForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  // const [validEmail, setValidEmail] = useState(false);
+  // const [validPassword, setValidPassword] = useState(false);
+  // const [validUsername, setValidUsername] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   let history = useHistory()
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
-      if (data) {
-        setErrors(data)
-      }
+    const data = await dispatch(signUp(username, email, password));
+    if (data) {
+      console.log("DATA: ", data)
+      setErrors(data)
     }
   };
 
@@ -35,9 +36,29 @@ const SignUpForm = () => {
     setPassword(e.target.value);
   };
 
-  const updateRepeatPassword = (e) => {
-    setRepeatPassword(e.target.value);
+  let validEmail;
+  let validPassword;
+  let validUsername;
+
+
+
+  if (email.includes('@')) {
+    validEmail = true;
   };
+
+  const pRegex = new RegExp(/[a-zA-Z0-9]{7,}/);
+
+  if (pRegex.test(password)) {
+    validPassword = true;
+  };
+
+  const uRegex = new RegExp(/[a-zA-Z0-9]/)
+
+  if (uRegex.test(username)) {
+    validUsername = true;
+  };
+
+
 
   if (user) {
     return <Redirect to='/' />;
@@ -76,40 +97,46 @@ const SignUpForm = () => {
               <div>
                 <label>
                   <span>EMAIL ADDRESS</span>
+                  {!validEmail && (
+                    <span>Invalid email</span>
+                  )}
                 </label>
                 <input
                   type='email'
                   name='email'
+                  placeholder='Your valid email'
                   onChange={updateEmail}
                   value={email}
                 ></input>
               </div>
               <div>
-                <label>PASSWORD</label>
-                <input
-                  type='text'
-                  name='password'
-                  onChange={updateEmail}
-                  value={email}
-                ></input>
-              </div>
-              <div>
-                <label>Password</label>
+                <label>
+                  <span>PASSWORD</span>
+                  {!validPassword && (
+                    <span>At least 7 characters with one letter and number</span>
+                  )}
+                </label>
                 <input
                   type='password'
                   name='password'
+                  placeholder='At least 7 characters with one letter and number'
                   onChange={updatePassword}
                   value={password}
                 ></input>
               </div>
               <div>
-                <label>Repeat Password</label>
+                <label>
+                  <span>USERNAME</span>
+                  {!validUsername && (
+                    <span>Letters and numbers only please</span>
+                  )}
+                </label>
                 <input
-                  type='password'
-                  name='repeat_password'
-                  onChange={updateRepeatPassword}
-                  value={repeatPassword}
-                  required={true}
+                  type='text'
+                  name='username'
+                  placeholder='Your custom wufoo URL'
+                  onChange={updateUsername}
+                  value={username}
                 ></input>
               </div>
               <button type='submit'>CONFIRM</button>
