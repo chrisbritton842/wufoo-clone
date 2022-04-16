@@ -9,6 +9,22 @@ const BuildForm = () => {
     const [inputs, setInputs] = useState([]);
     const [showEdit, setShowEdit] = useState(false);
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
+    console.log('INDEX: ', selectedFieldIndex);
+    const [selectedInputType, setSelectedInputType] = useState(null);
+    console.log("Selected Input Type: ", selectedInputType)
+    const [fieldLabel, setFieldLabel] = useState('');
+
+    const typeName = (type) => {
+        if (type === 1) return "Single Line Text";
+        else if (type === 2) return "Paragraph Text";
+        else if (type === 3) return "Number";
+        else if (type === 4) return "Url";
+        else if (type === 5) return "Email";
+        else if (type === 6) return "Phone";
+        else if (type === 7) return "Date";
+        else return "";
+    };
+
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());
@@ -44,7 +60,12 @@ const BuildForm = () => {
 
     const handleFieldSelect = (e) => {
         e.preventDefault();
-        setSelectedFieldIndex(parseInt(e.target.id, 10));
+        const index = parseInt(e.target.id, 10);
+        const currentType = inputs[index];
+        const name = typeName(currentType);
+        setSelectedFieldIndex(index);
+        setSelectedInputType(currentType);
+        setFieldLabel(name);
         setShowEdit(true);
     };
 
@@ -105,7 +126,20 @@ const BuildForm = () => {
                             <>
                                 <div>
                                     <label for="label-edit-field">Field Label</label>
-                                    <textarea id="label-edit-field"></textarea>
+                                    <textarea id="label-edit-field" value={fieldLabel} onChange={e => setFieldLabel(e.target.value)}></textarea>
+                                </div>
+                                <div>
+                                    <label for="type-select">Field Type</label>
+                                    <select id="type-select" value={selectedInputType} onChange={e => setSelectedInputType(e.target.value)}>
+                                        <option value={1}>Single Line Text</option>
+                                        <option value={2}>Paragraph Text</option>
+                                        <option value={3}>Number</option>
+                                        <option value={4}>Url</option>
+                                        <option value={5}>Email</option>
+                                        <option value={6}>Phone</option>
+                                        <option value={7}>Date</option>
+                                    </select>
+
                                 </div>
                                 <div>
                                     <button>Apply Label</button>
