@@ -11,7 +11,7 @@ const BuildForm = () => {
     const [showEdit, setShowEdit] = useState(false);
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
     const [selectedInputType, setSelectedInputType] = useState(null);
-    const [fieldLabel, setFieldLabel] = useState('');
+    const [selectedFieldLabel, setSelectedFieldLabel] = useState('');
 
     const typeName = (type) => {
         if (type === 1) return "Single Line Text";
@@ -68,12 +68,16 @@ const BuildForm = () => {
         e.preventDefault();
         const index = parseInt(e.target.id, 10);
         const currentType = inputs[index];
-        const name = typeName(currentType);
+        const name = labels[index];
         setSelectedFieldIndex(index);
         setSelectedInputType(currentType);
-        setFieldLabel(name);
+        setSelectedFieldLabel(name);
         setShowEdit(true);
     };
+
+    const handleEdit = () => {
+
+    }
 
     return (
         <div className="build-form-wrapper">
@@ -132,7 +136,7 @@ const BuildForm = () => {
                             <>
                                 <div>
                                     <label for="label-edit-field">Field Label</label>
-                                    <textarea id="label-edit-field" value={fieldLabel} onChange={e => setFieldLabel(e.target.value)}></textarea>
+                                    <textarea id="label-edit-field" value={selectedFieldLabel} onChange={e => setSelectedFieldLabel(e.target.value)}></textarea>
                                 </div>
                                 <div>
                                     <label for="type-select">Field Type</label>
@@ -148,8 +152,8 @@ const BuildForm = () => {
 
                                 </div>
                                 <div>
-                                    <button>Apply Label</button>
-                                    <button>Delete Field</button>
+                                    <button type="button" onClick={handleEdit}>Edit</button>
+                                    <button type="button" onClick={handleDelete}>Delete</button>
                                 </div>
                             </>
                         )}
