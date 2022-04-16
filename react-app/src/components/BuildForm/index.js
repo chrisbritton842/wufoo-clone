@@ -7,11 +7,10 @@ import './BuildForm.css'
 const BuildForm = () => {
     const dispatch = useDispatch();
     const [inputs, setInputs] = useState([]);
+    const [labels, setLabels] = useState([]);
     const [showEdit, setShowEdit] = useState(false);
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
-    console.log('INDEX: ', selectedFieldIndex);
     const [selectedInputType, setSelectedInputType] = useState(null);
-    console.log("Selected Input Type: ", selectedInputType)
     const [fieldLabel, setFieldLabel] = useState('');
 
     const typeName = (type) => {
@@ -32,30 +31,37 @@ const BuildForm = () => {
 
     const handleText = () => {
         setInputs((inputs) => [...inputs, 1, ]);
+        setLabels((labels) => [...labels, "Untitled"]);
     };
 
     const handleParagraph = () => {
         setInputs((inputs) => [...inputs, 2, ]);
+        setLabels((labels) => [...labels, "Untitled"]);
     };
 
     const handleNumber = () => {
         setInputs((inputs) => [...inputs, 3, ]);
+        setLabels((labels) => [...labels, "Number"]);
     };
 
     const handleUrl = () => {
         setInputs((inputs) => [...inputs, 4, ]);
+        setLabels((labels) => [...labels, "Url"]);
     };
 
     const handleEmail = () => {
         setInputs((inputs) => [...inputs, 5, ]);
+        setLabels((labels) => [...labels, "Email"]);
     };
 
     const handleTelephone = () => {
         setInputs((inputs) => [...inputs, 6, ]);
+        setLabels((labels) => [...labels, "Phone Number"]);
     };
 
     const handleDate = () => {
         setInputs((inputs) => [...inputs, 7, ]);
+        setLabels((labels) => [...labels, "Date"]);
     };
 
     const handleFieldSelect = (e) => {
@@ -159,43 +165,43 @@ const BuildForm = () => {
                                     <>
                                         {input === 1 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="text" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 2 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <textarea id={`${idx}`} onClick={handleFieldSelect}></textarea>
                                             </div>
                                         )}
                                         {input === 3 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="number" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 4 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="url" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 5 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="email" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 6 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="telephone" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 7 && (
                                             <div>
-                                                <label for={`${idx}`}></label>
+                                                <label for={`${idx}`}>{labels[idx]}</label>
                                                 <input id={`${idx}`} type="date" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
