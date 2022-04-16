@@ -67,27 +67,27 @@ const BuildForm = () => {
                         <h3>Standard</h3>
                         <ul className="left-input-col">
                             <li className="text-li">
-                                <button type="button" onClick={handleText}></button>
+                                <button type="button" onClick={handleText}>Single Line Text</button>
                             </li>
                             <li className="paragraph-li">
-                                <button type="button" onClick={handleParagraph}></button>
+                                <button type="button" onClick={handleParagraph}>Paragraph Text</button>
                             </li>
                             <li className="number-li">
-                                <button type="button" onClick={handleNumber}></button>
+                                <button type="button" onClick={handleNumber}>Number</button>
                             </li>
                             <li className="url-li">
-                                <button type="button" onClick={handleUrl}></button>
+                                <button type="button" onClick={handleUrl}>Url</button>
                             </li>
                         </ul>
                         <ul className="right-input-col">
                             <li className="email-li">
-                                <button type="button" onClick={handleEmail}></button>
+                                <button type="button" onClick={handleEmail}>Email</button>
                             </li>
                             <li className="telephone-li">
-                                <button type="button" onClick={handleTelephone}></button>
+                                <button type="button" onClick={handleTelephone}>Phone</button>
                             </li>
                             <li className="date-li">
-                                <button type="button" onClick={handleDate}></button>
+                                <button type="button" onClick={handleDate}>Date</button>
                             </li>
                         </ul>
                     </div>
@@ -97,29 +97,50 @@ const BuildForm = () => {
                             <div></div>
                         </div>
                         <div className="form-inputs">
-                            {inputs.map(input => {
+                            {inputs.map((input, idx) => {
                                 return (
                                     <>
                                         {input === 1 && (
-                                            <input type="text"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="text"></input>
+                                            </div>
                                         )}
                                         {input === 2 && (
-                                            <textarea></textarea>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <textarea id={`${idx}`}></textarea>
+                                            </div>
                                         )}
                                         {input === 3 && (
-                                            <input type="number"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="number"></input>
+                                            </div>
                                         )}
                                         {input === 4 && (
-                                            <input type="url"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="url"></input>
+                                            </div>
                                         )}
                                         {input === 5 && (
-                                            <input type="email"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="email"></input>
+                                            </div>
                                         )}
                                         {input === 6 && (
-                                            <input type="telephone"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="telephone"></input>
+                                            </div>
                                         )}
                                         {input === 7 && (
-                                            <input type="date"></input>
+                                            <div>
+                                                <label for={`${idx}`}></label>
+                                                <input id={`${idx}`} type="date"></input>
+                                            </div>
                                         )}
                                     </>
                                 )
