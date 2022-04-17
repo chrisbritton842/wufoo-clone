@@ -8,7 +8,9 @@ const BuildForm = () => {
     const dispatch = useDispatch();
     const [inputs, setInputs] = useState([]);
     const [labels, setLabels] = useState([]);
-    const [showEdit, setShowEdit] = useState(false);
+    const [title, setTitle] = useState('Untitled Form');
+    const [description, setDescription] = useState("This is my form. Please fill it out. It's awesome!")
+    const [displayedPanel, setDisplayedPanel] = useState('a');
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
     const [selectedInputType, setSelectedInputType] = useState(null);
     const [selectedFieldLabel, setSelectedFieldLabel] = useState('');
@@ -60,11 +62,10 @@ const BuildForm = () => {
         setSelectedFieldIndex(index);
         setSelectedInputType(currentType);
         setSelectedFieldLabel(name);
-        setShowEdit(true);
+        setDisplayedPanel('b');
     };
 
     const handleEdit = () => {
-        console.log("Selected Input Type: ", selectedInputType)
         setInputs((inputs) => {
             return [
                 ...inputs.slice(0, selectedFieldIndex),
@@ -81,7 +82,7 @@ const BuildForm = () => {
             ]
         });
 
-        setShowEdit(false);
+        setDisplayedPanel('a');
     };
 
     const handleDelete = () => {
@@ -101,7 +102,7 @@ const BuildForm = () => {
             ]
         });
 
-        setShowEdit(false);
+        setDisplayedPanel('a');
     };
 
     return (
@@ -127,7 +128,7 @@ const BuildForm = () => {
                 </div>
                 <div className="form-stage">
                     <div className="left-side">
-                        {!showEdit && (
+                        {displayedPanel === 'a' && (
                             <>
                                 <h3>Standard</h3>
                                 <ul className="left-input-col">
@@ -157,7 +158,7 @@ const BuildForm = () => {
                                 </ul>
                             </>
                         )}
-                        {showEdit && (
+                        {displayedPanel === 'b' && (
                             <>
                                 <div>
                                     <label for="label-edit-field">Field Label</label>
@@ -182,11 +183,26 @@ const BuildForm = () => {
                                 </div>
                             </>
                         )}
+                        {displayedPanel === 'c' && (
+                            <>
+                                <div>
+                                    <label for="title-edit-field">Form Title</label>
+                                    <input id="title-edit-field" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
+                                </div>
+                                <div>
+                                    <label for="description-edit-field">Description</label>
+                                    <textarea id="description-edit-field" value={description} onChange={e => setDescription(e.target.value)}></textarea>
+                                </div>
+                                <div>
+                                    <button type="button" onClick={() => setDisplayedPanel('a')}>Done</button>
+                                </div>
+                            </>
+                        )}
                     </div>
                     <div className="form-main">
-                        <div className="form-info-div">
-                            <h2>Untitled Form</h2>
-                            <div></div>
+                        <div className="form-info-div" onClick={() => setDisplayedPanel('c')}>
+                            <h2>{title}</h2>
+                            <div>{description}</div>
                         </div>
                         <div className="form-inputs">
                             {inputs.map((input, idx) => {
@@ -237,6 +253,15 @@ const BuildForm = () => {
                                     </>
                                 )
                             })}
+                        </div>
+                        <div className="bottom-buttons">
+                            <span className="left-btns">
+                                <button type="button">Save Form</button>
+                            </span>
+                            <span className="right-btns">
+                                <button type="button">View Form</button>
+                                <button type="button">Share Form</button>
+                            </span>
                         </div>
                     </div>
                 </div>
