@@ -13,18 +13,6 @@ const BuildForm = () => {
     const [selectedInputType, setSelectedInputType] = useState(null);
     const [selectedFieldLabel, setSelectedFieldLabel] = useState('');
 
-    const typeName = (type) => {
-        if (type === 1) return "Single Line Text";
-        else if (type === 2) return "Paragraph Text";
-        else if (type === 3) return "Number";
-        else if (type === 4) return "Url";
-        else if (type === 5) return "Email";
-        else if (type === 6) return "Phone";
-        else if (type === 7) return "Date";
-        else return "";
-    };
-
-
     const handleLogout = () => {
         dispatch(sessionActions.logout());
     };
@@ -76,8 +64,45 @@ const BuildForm = () => {
     };
 
     const handleEdit = () => {
+        console.log("Selected Input Type: ", selectedInputType)
+        setInputs((inputs) => {
+            return [
+                ...inputs.slice(0, selectedFieldIndex),
+                parseInt(selectedInputType, 10),
+                ...inputs.slice(selectedFieldIndex + 1),
+            ]
+        });
 
-    }
+        setLabels((labels) => {
+            return [
+                ...labels.slice(0, selectedFieldIndex),
+                selectedFieldLabel,
+                ...labels.slice(selectedFieldIndex + 1),
+            ]
+        });
+
+        setShowEdit(false);
+    };
+
+    const handleDelete = () => {
+        setInputs((inputs) => {
+            return [
+                ...inputs.slice(0, selectedFieldIndex),
+                0,
+                ...inputs.slice(selectedFieldIndex + 1),
+            ]
+        });
+
+        setLabels((labels) => {
+            return [
+                ...labels.slice(0, selectedFieldIndex),
+                "",
+                ...labels.slice(selectedFieldIndex + 1),
+            ]
+        });
+
+        setShowEdit(false);
+    };
 
     return (
         <div className="build-form-wrapper">
