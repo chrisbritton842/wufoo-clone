@@ -16,7 +16,7 @@ class Entry(db.Model):
     url = db.Column(JSONB)
     form_id = db.Column(db.Integer, db.ForeignKey('forms.id'), nullable=False)
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = db.Column(DateTime(timezone=True), onupdate=func.utc_timestamp())
+    updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
 
     form = db.relationship("Form", back_populates="entries")
 

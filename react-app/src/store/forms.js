@@ -37,7 +37,7 @@ export const getForms = (userId) => async (dispatch) => {
     }
 };
 
-export const updateForm = (title, inputs, labels, description, formId) => async (dispatch) => {
+export const updateForm = (title, inputs, labels, description, formId, userId) => async (dispatch) => {
     const response = await fetch(`/api/forms/${formId}`, {
         method: "PUT",
         headers: {
@@ -48,7 +48,27 @@ export const updateForm = (title, inputs, labels, description, formId) => async 
             title,
             inputs,
             labels,
-            description
+            description,
+            userId
+        })
+    });
+
+    if (response.ok) {
+        const forms = await response.json();
+        dispatch(setForms(forms));
+    }
+};
+
+export const updateFormTitle = (title, formId, userId) => async (dispatch) => {
+    const response = await fetch(`/api/forms/${formId}`, {
+        method: "PUT",
+        headers: {
+            'Accept': 'application/json',
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            title,
+            userId
         })
     });
 

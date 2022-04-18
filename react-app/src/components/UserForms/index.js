@@ -1,14 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as formActions from '../../store/forms';
+import { ReactComponent as EntriesIcon } from './entries.svg';
+import { ReactComponent as ShareIcon } from './share.svg';
+import { ReactComponent as MoreIcon } from './more.svg';
 import './UserForms.css'
 
 const UserForms = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const forms = useSelector((state) => state.forms.forms);
+    const [showTitleEdit, setShowTitleEdit] = useState(false);
+    const [editedTitle, setEditedTitle] = useState('');
+    const [selectedFormId, setSelectedFormId] = useState(null);
+    console.log('Selected Form Id: ', selectedFormId)
 
     let history = useHistory();
 
@@ -23,6 +30,22 @@ const UserForms = () => {
     useEffect(() => {
         return dispatch(formActions.getForms(user.id))
     }, [dispatch, user]);
+
+    const handleTitleEdit = (e) => {
+        const formId = parseInt(e.target.id, 10);
+        const title = forms[formId - 1].title;
+        setEditedTitle(title);
+        setSelectedFormId(formId);
+        setShowTitleEdit(true);
+    };
+
+    const editTitle = (e) => {
+        if (e.code === 'Enter') {
+            e.preventDefault();
+            dispatch(formActions.updateFormTitle(editedTitle, selectedFormId, user.id));
+            setShowTitleEdit(false);
+        }
+    };
 
 
     return (
@@ -87,22 +110,41 @@ const UserForms = () => {
                                         <tr>
                                             <td>
                                                 <div className="title-cell-div">
-                                                    <b>{form.title}</b>
+                                                    {showTitleEdit && selectedFormId === form.id && (
+                                                        <input type="text" value={editedTitle} onChange={e => setEditedTitle(e.target.value)} onKeyUp={editTitle}></input>
+                                                    )}
+                                                    {!(showTitleEdit && selectedFormId === form.id) && (
+                                                        <b>{form.title}</b>
+                                                    )}
+                                                    <div className="form-information">
+                                                        <span id={`${form.id}`} onClick={e => handleTitleEdit(e)}>Edit Title</span>
+                                                        <div className="recent-entry-date">
+                                                            Recent entry:
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div className="all-entries-cell-div">
-
+                                                    <span>
+                                                        <span></span>
+                                                        <EntriesIcon />
+                                                    </span>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div className="share-cell-div">
-
+                                                    <span>
+                                                        <ShareIcon />
+                                                    </span>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div className="more-cell-div">
-
+                                                    <span>
+                                                        <MoreIcon />
+                                                    </span>
                                                 </div>
                                             </td>
                                         </tr>

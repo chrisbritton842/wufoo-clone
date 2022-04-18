@@ -15,7 +15,7 @@ class Form(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     all_entries = db.Column(db.Integer)
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = db.Column(DateTime(timezone=True), onupdate=func.utc_timestamp())
+    updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
 
     owner = db.relationship("User", back_populates="forms")
     entries = db.relationship("Entry", back_populates="form")

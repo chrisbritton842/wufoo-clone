@@ -17,11 +17,11 @@ def create_form(userId):
 
         forms = Form.query.filter(Form.user_id == userId).all()
 
-        return { "forms": [f.to_dict() for f in forms] }
+        return { "forms": sorted([f.to_dict() for f in forms], key=lambda f: f["created_at"]) }
 
     forms = Form.query.filter(Form.user_id == userId).all()
 
-    return { "forms": [f.to_dict() for f in forms] }
+    return { "forms": sorted([f.to_dict() for f in forms], key=lambda f: f["created_at"]) }
 
 
 @form_routes.route('/<id>', methods=['PUT'])
@@ -47,7 +47,7 @@ def update_form(id):
 
     forms = Form.query.filter(Form.user_id == data["userId"]).all()
 
-    return { "forms": [f.to_dict() for f in forms] }
+    return { "forms": sorted([f.to_dict() for f in forms], key=lambda f: f["created_at"]) }
 
 
 @form_routes.route('/<userId>/<id>', methods=['DELETE'])
@@ -59,4 +59,4 @@ def delete_form(userId, id):
 
     forms = Form.query.filter(Form.user_id == userId).all()
 
-    return { "forms": [f.to_dict() for f in forms] }
+    return { "forms": sorted([f.to_dict() for f in forms], key=lambda f: f["created_at"]) }
