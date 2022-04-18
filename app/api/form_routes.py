@@ -3,23 +3,23 @@ from app.models import db, Form
 
 form_routes = Blueprint('forms', __name__)
 
-@form_routes.route('/', methods=['GET', 'POST'])
-def create_form():
-
-    data = request.get_json(force=True)
+@form_routes.route('/<userId>', methods=['GET', 'POST'])
+def create_form(userId):
 
     if request.method == 'POST':
 
-        form = Form(title=data["title"], field_type=data["inputs"], field_labels=data["labels"], input_labels=data["description"], user_id=data["userId"])
+        data = request.get_json(force=True)
+
+        form = Form(title=data["title"], field_type=data["inputs"], field_labels=data["labels"], input_labels=data["description"], user_id=userId)
         db.session.add(form)
         db.session.flush()
         db.session.commit()
 
-        forms = Form.query.filter(Form.user_id == data["userId"]).all()
+        forms = Form.query.filter(Form.user_id == userId).all()
 
         return { "forms": [f.to_dict() for f in forms] }
 
-    forms = Form.query.filter(Form.user_id == data["userId"]).all()
+    forms = Form.query.filter(Form.user_id == userId).all()
 
     return { "forms": [f.to_dict() for f in forms] }
 

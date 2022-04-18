@@ -8,7 +8,7 @@ const setForms = (forms) => {
 };
 
 export const createForm = (title, inputs, labels, description, userId) => async (dispatch) => {
-    const response = await fetch('/api/forms/', {
+    const response = await fetch(`/api/forms/${userId}`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -18,8 +18,7 @@ export const createForm = (title, inputs, labels, description, userId) => async 
             title,
             inputs,
             labels,
-            description,
-            userId
+            description
         })
     });
 
@@ -29,8 +28,8 @@ export const createForm = (title, inputs, labels, description, userId) => async 
     }
 };
 
-export const getForms = () => async (dispatch) => {
-    const response = await fetch('api/forms/');
+export const getForms = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/forms/${userId}`);
 
     if (response.ok) {
         const forms = await response.json();

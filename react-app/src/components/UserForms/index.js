@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import * as formActions from '../../store/forms';
 import './UserForms.css'
 
 const UserForms = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
+    const forms = useSelector((state) => state.forms.forms);
+
     let history = useHistory();
 
     const handleLogout = () => {
@@ -16,6 +19,10 @@ const UserForms = () => {
     function handleCreateForm() {
         history.push(`/build/${user.id}`);
     };
+
+    useEffect(() => {
+        return dispatch(formActions.getForms(user.id))
+    }, [dispatch, user]);
 
 
     return (
@@ -49,6 +56,61 @@ const UserForms = () => {
                     <button type="button" className="create-form" onClick={handleCreateForm}>
                         Create Form
                     </button>
+                </div>
+            </div>
+            <div className="user-forms-area">
+                <div className="user-forms-grid">
+                    <div className="forms-utility-bar">
+
+                    </div>
+                    <div className="forms-table-div">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div>Name</div>
+                                    </th>
+                                    <th>
+                                        <div>All Entries</div>
+                                    </th>
+                                    <th>
+                                        <div>Share</div>
+                                    </th>
+                                    <th>
+                                        <div>More</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {forms?.map((form) => {
+                                    return (
+                                        <tr>
+                                            <td>
+                                                <div className="title-cell-div">
+                                                    <b>{form.title}</b>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="all-entries-cell-div">
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="share-cell-div">
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="more-cell-div">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
