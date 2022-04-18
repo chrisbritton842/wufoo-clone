@@ -6,11 +6,7 @@ form_routes = Blueprint('forms', __name__)
 @form_routes.route('/', methods=['GET', 'POST'])
 def create_form():
 
-
-
     data = request.get_json(force=True)
-
-    print("Here is the data: ", data)
 
     if request.method == 'POST':
 
@@ -21,8 +17,6 @@ def create_form():
         db.session.commit()
 
         forms = Form.query.filter(Form.user_id == data["userId"]).all()
-
-        print("I'm here!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
         return { "forms": [f.to_dict() for f in forms] }
 
