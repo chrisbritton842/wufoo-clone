@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
+import { createForm } from '../../store/forms';
 import './BuildForm.css'
 
 const BuildForm = () => {
+    const user = useSelector((state) => state.session.user)
     const dispatch = useDispatch();
     const [inputs, setInputs] = useState([]);
     const [labels, setLabels] = useState([]);
@@ -103,6 +105,10 @@ const BuildForm = () => {
         });
 
         setDisplayedPanel('a');
+    };
+
+    const handleSaveForm = () => {
+        dispatch(createForm(title, inputs, labels, description, user.id));
     };
 
     return (
@@ -256,7 +262,7 @@ const BuildForm = () => {
                         </div>
                         <div className="bottom-buttons">
                             <span className="left-btns">
-                                <button type="button">Save Form</button>
+                                <button type="button" onClick={handleSaveForm}>Save Form</button>
                             </span>
                             <span className="right-btns">
                                 <button type="button">View Form</button>
