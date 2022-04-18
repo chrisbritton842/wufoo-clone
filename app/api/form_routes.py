@@ -10,7 +10,6 @@ def create_form():
 
     if request.method == 'POST':
 
-
         form = Form(title=data["title"], field_type=data["inputs"], field_labels=data["labels"], input_labels=data["description"], user_id=data["userId"])
         db.session.add(form)
         db.session.flush()
