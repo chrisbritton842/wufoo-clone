@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import { createForm } from '../../store/forms';
 import './BuildForm.css'
@@ -8,6 +8,7 @@ import './BuildForm.css'
 const BuildForm = () => {
     const user = useSelector((state) => state.session.user)
     const dispatch = useDispatch();
+    const history = useHistory();
     const [inputs, setInputs] = useState([]);
     const [labels, setLabels] = useState([]);
     const [title, setTitle] = useState('Untitled Form');
@@ -109,6 +110,7 @@ const BuildForm = () => {
 
     const handleSaveForm = () => {
         dispatch(createForm(title, inputs, labels, description, user.id));
+        history.push(`/forms/${user.id}`)
     };
 
     return (

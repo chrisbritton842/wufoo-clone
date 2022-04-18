@@ -32,6 +32,5 @@ class Form(db.Model):
             'all_entries': self.all_entries,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
-            'owner': self.owner,
             'entries': [e.to_dict() for e in self.entries]
         }

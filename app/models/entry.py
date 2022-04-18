@@ -32,6 +32,5 @@ class Entry(db.Model):
             'url': self.url,
             'form_id': self.form_id,
             'created_at': self.created_at,
-            'updated_at': self.updated_at,
-            'form': self.form
+            'updated_at': self.updated_at
         }
