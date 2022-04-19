@@ -35,7 +35,8 @@ const UserForms = () => {
 
     const handleTitleEdit = (e) => {
         const formId = parseInt(e.target.id, 10);
-        const title = forms[formId - 1].title;
+        const userForm = forms.find(form => form.id === formId);
+        const title = userForm.title;
         setEditedTitle(title);
         setSelectedFormId(formId);
         setShowTitleEdit(true);
