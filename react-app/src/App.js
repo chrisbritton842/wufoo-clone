@@ -10,6 +10,7 @@ import SplashPage from './components/SplashPage';
 import UserForms from './components/UserForms';
 import BuildForm from './components/BuildForm';
 import EditForm from './components/EditForm';
+import ViewForm from './components/ViewForm';
 import { authenticate } from './store/session';
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path='/signup' exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path='/form/:formId' exact={true}>
+          <ViewForm />
         </Route>
         <ProtectedRoute path='/forms/:userId' exact={true} >
           <UserForms />

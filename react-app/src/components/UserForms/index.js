@@ -50,14 +50,19 @@ const UserForms = () => {
         }
     };
 
+    const handleView = (e) => {
+        const formId = parseInt(e.target.dataset.formId);
+        history.push(`/form/${formId}`);
+    }
+
     const handleEdit = (e) => {
         const formId = parseInt(e.target.dataset.formId);
-        history.push(`/edit/${formId}`)
-    }
+        history.push(`/edit/${formId}`);
+    };
 
     const handleDelete = (e) => {
         const formId = parseInt(e.target.dataset.formId);
-        dispatch(formActions.deleteForm(user.id, formId))
+        dispatch(formActions.deleteForm(user.id, formId));
     };
 
 
@@ -162,7 +167,7 @@ const UserForms = () => {
                                                         <li>
                                                             <section className="submenu-view-form-div" data-form-id={`${form.id}`}>
                                                                 <ViewIcon />
-                                                                <span>View form</span>
+                                                                <span data-form-id={`${form.id}`} onClick={handleView}>View form</span>
                                                             </section>
                                                         </li>
                                                         <li>
