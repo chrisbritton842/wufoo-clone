@@ -8,7 +8,7 @@ const setEntries = (entries) => {
 };
 
 export const createEntry = (date, email, number, telephone, text, textArea, url, formId) => async (dispatch) => {
-    const response = await fetch('/api/entries', {
+    const response = await fetch('/api/entries/', {
         method: "POST",
         headers: {
             'Accept': 'application/json',

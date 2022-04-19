@@ -30,7 +30,7 @@ const ViewForm = () => {
 
     const handleSubmitForm = () => {
         dispatch(entryActions.createEntry(date, email, number, telephone, text, textArea, url, formId));
-        history.push('/')
+        history.push('/endpage')
     };
 
     const handleDateInput = (e) => {
