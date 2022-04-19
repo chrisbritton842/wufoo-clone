@@ -6,6 +6,9 @@ import * as formActions from '../../store/forms';
 import { ReactComponent as EntriesIcon } from './entries.svg';
 import { ReactComponent as ShareIcon } from './share.svg';
 import { ReactComponent as MoreIcon } from './more.svg';
+import { ReactComponent as ViewIcon } from './view.svg';
+import { ReactComponent as EditIcon } from './edit.svg';
+import { ReactComponent as DeleteIcon } from './delete.svg';
 import './UserForms.css'
 
 const UserForms = () => {
@@ -45,6 +48,15 @@ const UserForms = () => {
             dispatch(formActions.updateFormTitle(editedTitle, selectedFormId, user.id));
             setShowTitleEdit(false);
         }
+    };
+
+    const handleEdit = (e) => {
+        const formId = parseInt(e.target.dataset.formId);
+    }
+
+    const handleDelete = (e) => {
+        const formId = parseInt(e.target.dataset.formId);
+        dispatch(formActions.deleteForm(user.id, formId))
     };
 
 
@@ -145,6 +157,26 @@ const UserForms = () => {
                                                     <span>
                                                         <MoreIcon />
                                                     </span>
+                                                    <ul class="more-icon-submenu">
+                                                        <li>
+                                                            <section className="submenu-view-form-div" data-form-id={`${form.id}`}>
+                                                                <ViewIcon />
+                                                                <span>View form</span>
+                                                            </section>
+                                                        </li>
+                                                        <li>
+                                                            <section className="submenu-edit-form-div">
+                                                                <EditIcon />
+                                                                <span data-form-id={`${form.id}`} onClick={handleEdit}>Edit form</span>
+                                                            </section>
+                                                        </li>
+                                                        <li>
+                                                            <section className="submenu-delete-form-div">
+                                                                <DeleteIcon />
+                                                                <span data-form-id={`${form.id}`} onClick={handleDelete}>Delete form</span>
+                                                            </section>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                         </tr>
