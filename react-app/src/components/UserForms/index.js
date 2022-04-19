@@ -18,7 +18,6 @@ const UserForms = () => {
     const [showTitleEdit, setShowTitleEdit] = useState(false);
     const [editedTitle, setEditedTitle] = useState('');
     const [selectedFormId, setSelectedFormId] = useState(null);
-    console.log('Selected Form Id: ', selectedFormId)
 
     let history = useHistory();
 
@@ -52,6 +51,7 @@ const UserForms = () => {
 
     const handleEdit = (e) => {
         const formId = parseInt(e.target.dataset.formId);
+        history.push(`/edit/${formId}`)
     }
 
     const handleDelete = (e) => {

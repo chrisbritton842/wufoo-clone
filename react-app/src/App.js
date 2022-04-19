@@ -9,6 +9,7 @@ import User from './components/User';
 import SplashPage from './components/SplashPage';
 import UserForms from './components/UserForms';
 import BuildForm from './components/BuildForm';
+import EditForm from './components/EditForm';
 import { authenticate } from './store/session';
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/build/:userId' exact={true} >
           <BuildForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/edit/:formId' exact={true} >
+          <EditForm />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
