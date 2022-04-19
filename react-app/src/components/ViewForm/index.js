@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import * as formActions from '../../store/forms'
+import * as formActions from '../../store/forms';
+import * as entryActions from '../../store/entries';
 import './ViewForm.css'
 
 const ViewForm = () => {
@@ -28,7 +29,8 @@ const ViewForm = () => {
     console.log("Url: ", url)
 
     const handleSubmitForm = () => {
-
+        dispatch(entryActions.createEntry(date, email, number, telephone, text, textArea, url, formId));
+        history.push('/')
     };
 
     const handleDateInput = (e) => {

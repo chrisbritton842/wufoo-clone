@@ -11,6 +11,7 @@ import UserForms from './components/UserForms';
 import BuildForm from './components/BuildForm';
 import EditForm from './components/EditForm';
 import ViewForm from './components/ViewForm';
+import EndPage from './components/EndPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path='/form/:formId' exact={true}>
           <ViewForm />
+        </Route>
+        <Route path='/endpage' exact={true}>
+          <EndPage />
         </Route>
         <ProtectedRoute path='/forms/:userId' exact={true} >
           <UserForms />

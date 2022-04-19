@@ -1,16 +1,16 @@
 from flask import Blueprint, request
 from app.models import db, Entry
 
-entry_routes = Blueprint('entrie', __name__)
+entry_routes = Blueprint('entries', __name__)
 
-@entry_routes.route('/<formId>', methods=['GET', 'POST'])
-def add_entry(formId):
+@entry_routes.route('/', methods=['GET', 'POST'])
+def add_entry():
 
     if request.method == 'POST':
 
         data = request.get_json(force=True)
 
-        entry = Entry(date=data["date"], email=data["email"], number=data["number"], telephone=data["telephone"], text=data["text"], textarea=data["textArea"], url=data["url"], form_id=formId)
+        entry = Entry(date=data["date"], email=data["email"], number=data["number"], telephone=data["telephone"], text=data["text"], textarea=data["textArea"], url=data["url"], form_id=data["formId"])
         db.session.add(entry)
         db.session.flush()
         db.session.commit()
