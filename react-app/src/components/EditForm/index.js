@@ -10,13 +10,13 @@ const EditForm = () => {
     const parsedFormId = parseInt(formId, 10);
     const user = useSelector((state) => state.session.user);
     const forms = useSelector((state) => state.forms.forms);
-    const userForm = forms.find(form => form.id === parsedFormId);
+    const userForm = forms?.find(form => form.id === parsedFormId);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [inputs, setInputs] = useState(userForm.field_type);
-    const [labels, setLabels] = useState(userForm.field_labels);
-    const [title, setTitle] = useState(userForm.title);
-    const [description, setDescription] = useState(userForm.input_labels)
+    const [inputs, setInputs] = useState(userForm?.field_type);
+    const [labels, setLabels] = useState(userForm?.field_labels);
+    const [title, setTitle] = useState(userForm?.title);
+    const [description, setDescription] = useState(userForm?.input_labels)
     const [displayedPanel, setDisplayedPanel] = useState('a');
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
     const [selectedInputType, setSelectedInputType] = useState(null);
@@ -217,7 +217,7 @@ const EditForm = () => {
                             <div>{description}</div>
                         </div>
                         <div className="form-inputs">
-                            {inputs.map((input, idx) => {
+                            {inputs?.map((input, idx) => {
                                 return (
                                     <>
                                         {input === 1 && (
