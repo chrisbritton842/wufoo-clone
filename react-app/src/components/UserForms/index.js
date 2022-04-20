@@ -50,9 +50,14 @@ const UserForms = () => {
         }
     };
 
+    const handleEntries = (e) => {
+        const formId = parseInt(e.target.dataset.formId);
+        history.push(`/entry-manager/${formId}`);
+    }
+
     const handleShare = (e) => {
         const formId = parseInt(e.target.dataset.formId);
-        history.push(`/forms/${formId}/share`)
+        history.push(`/forms/${formId}/share`);
     };
 
     const handleView = (e) => {
@@ -152,7 +157,7 @@ const UserForms = () => {
                                                 <div className="all-entries-cell-div">
                                                     <span>
                                                         <span></span>
-                                                        <EntriesIcon style={{height: '20px'}}/>
+                                                        <EntriesIcon data-form-id={`${form.id}`} onClick={handleEntries} style={{height: '20px'}}/>
                                                     </span>
                                                 </div>
                                             </td>

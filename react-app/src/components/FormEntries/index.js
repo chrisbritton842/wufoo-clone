@@ -3,9 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as formActions from '../../store/forms';
-import { ReactComponent as LinkIcon } from './link.svg';
 
-const SharePage = () => {
+const FormEntries = () => {
     const dispatch = useDispatch();
     let { formId } = useParams();
     const parsedFormId = parseInt(formId, 10);
@@ -22,7 +21,7 @@ const SharePage = () => {
     }, [dispatch, user]);
 
     return (
-        <div className="share-form-wrapper">
+        <div className="form-entries-wrapper">
             <nav className="user-forms-header">
                 <ul id="menu">
                     <li className="logo-li">
@@ -46,22 +45,14 @@ const SharePage = () => {
             </nav>
             <div className="top-band">
                 <div className="h1-div">
-                    <h1>{userForm?.title}</h1>
+                    <h1>{`${userForm.title} Entries`}</h1>
                 </div>
             </div>
-            <div className="share-link-area">
-                <h2>Share a link to your form</h2>
-                <div className="main-link-div">
-                    <div className="share-link">
-                        <LinkIcon style={{height: '15px'}}/>
-                        <input type="url" value={`${window.location.origin}/form/${formId}`}></input>
-                        <button type="button" data-url={`${window.location.origin}/form/${formId}`} onClick={e => navigator.clipboard.writeText(e.target.dataset.url)}>COPY</button>
-                    </div>
-                </div>
 
-            </div>
+
         </div>
+
     )
 }
 
-export default SharePage;
+export default FormEntries;

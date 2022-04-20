@@ -8,7 +8,7 @@ const setEntries = (entries) => {
 };
 
 export const createEntry = (date, email, number, telephone, text, textArea, url, formId) => async (dispatch) => {
-    const response = await fetch('/api/entries/', {
+    const response = await fetch(`/api/entries/${formId}`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -21,8 +21,7 @@ export const createEntry = (date, email, number, telephone, text, textArea, url,
             telephone,
             text,
             textArea,
-            url,
-            formId
+            url
         })
     });
 
@@ -32,8 +31,8 @@ export const createEntry = (date, email, number, telephone, text, textArea, url,
     }
 };
 
-export const getEntries = () => async (dispatch) => {
-    const response = await fetch('/api/entries');
+export const getEntries = (formId) => async (dispatch) => {
+    const response = await fetch(`/api/entries/${formId}`);
 
     if (response.ok) {
         const entries = await response.json();
