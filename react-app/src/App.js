@@ -12,6 +12,7 @@ import BuildForm from './components/BuildForm';
 import EditForm from './components/EditForm';
 import ViewForm from './components/ViewForm';
 import EndPage from './components/EndPage';
+import SharePage from './components/ShareForm';
 import { authenticate } from './store/session';
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/edit/:formId' exact={true} >
           <EditForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/forms/:formId/share' exact={true}>
+          <SharePage />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

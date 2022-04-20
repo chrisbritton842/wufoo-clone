@@ -8,8 +8,6 @@ def add_entry():
 
     if request.method == 'POST':
 
-        print("I'm here!!!!!!!!!!!!!!!!!!!!!!")
-
         data = request.get_json(force=True)
 
         entry = Entry(date=data["date"], email=data["email"], number=data["number"], telephone=data["telephone"], text=data["text"], textarea=data["textArea"], url=data["url"], form_id=data["formId"])

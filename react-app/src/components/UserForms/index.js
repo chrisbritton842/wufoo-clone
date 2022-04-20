@@ -50,10 +50,15 @@ const UserForms = () => {
         }
     };
 
+    const handleShare = (e) => {
+        const formId = parseInt(e.target.dataset.formId);
+        history.push(`/forms/${formId}/share`)
+    };
+
     const handleView = (e) => {
         const formId = parseInt(e.target.dataset.formId);
         history.push(`/form/${formId}`);
-    }
+    };
 
     const handleEdit = (e) => {
         const formId = parseInt(e.target.dataset.formId);
@@ -154,7 +159,7 @@ const UserForms = () => {
                                             <td>
                                                 <div className="share-cell-div">
                                                     <span>
-                                                        <ShareIcon />
+                                                        <ShareIcon data-form-id={`${form.id}`} onClick={handleShare}/>
                                                     </span>
                                                 </div>
                                             </td>
