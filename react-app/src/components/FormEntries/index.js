@@ -14,15 +14,13 @@ const FormEntries = () => {
     const userForm = forms?.find(form => form.id === parsedFormId);
     const dispatch = useDispatch();
     console.log("Form: ", userForm);
-    const date = new Date(userForm.entries[0].created_at)
-    console.log("Date: ", date.toLocaleString())
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());
     };
 
     useEffect(() => {
-        return dispatch(formActions.getForms(user.id))
+        dispatch(formActions.getForms(user.id))
     }, [dispatch, user]);
 
     return (
