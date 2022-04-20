@@ -114,7 +114,15 @@ const EditForm = () => {
 
     const handleSaveForm = () => {
         dispatch(updateForm(title, inputs, labels, description, parsedFormId, user.id));
-        history.push(`/forms/${user.id}`)
+        history.push(`/forms/${user.id}`);
+    };
+
+    const handleViewForm = () => {
+        history.push(`/form/${formId}`);
+    };
+
+    const handleShareForm = () => {
+        history.push(`/forms/${formId}/share`);
     };
 
     return (
@@ -271,8 +279,8 @@ const EditForm = () => {
                                 <button type="button" onClick={handleSaveForm}>Save Form</button>
                             </span>
                             <span className="right-btns">
-                                <button type="button">View Form</button>
-                                <button type="button">Share Form</button>
+                                <button type="button" onClick={handleViewForm}>View Form</button>
+                                <button type="button" onClick={handleShareForm}>Share Form</button>
                             </span>
                         </div>
                     </div>
