@@ -25,9 +25,6 @@ const ViewForm = () => {
     const [textArea, setTextArea] = useState({});
     const [url, setUrl] = useState({});
 
-    console.log("Email: ", email)
-    console.log("Url: ", url)
-
     const handleSubmitForm = () => {
         dispatch(entryActions.createEntry(date, email, number, telephone, text, textArea, url, formId));
         history.push('/endpage')
