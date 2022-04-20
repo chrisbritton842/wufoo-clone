@@ -266,10 +266,6 @@ const BuildForm = () => {
                             <span className="left-btns">
                                 <button type="button" onClick={handleSaveForm}>Save Form</button>
                             </span>
-                            <span className="right-btns">
-                                <button type="button">View Form</button>
-                                <button type="button">Share Form</button>
-                            </span>
                         </div>
                     </div>
                 </div>
