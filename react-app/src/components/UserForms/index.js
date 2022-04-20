@@ -152,38 +152,38 @@ const UserForms = () => {
                                                 <div className="all-entries-cell-div">
                                                     <span>
                                                         <span></span>
-                                                        <EntriesIcon />
+                                                        <EntriesIcon style={{height: '20px'}}/>
                                                     </span>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div className="share-cell-div">
                                                     <span>
-                                                        <ShareIcon data-form-id={`${form.id}`} onClick={handleShare}/>
+                                                        <ShareIcon data-form-id={`${form.id}`} onClick={handleShare} style={{height: '20px'}}/>
                                                     </span>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div className="more-cell-div">
                                                     <span>
-                                                        <MoreIcon />
+                                                        <MoreIcon style={{height: '20px'}}/>
                                                     </span>
                                                     <ul class="more-icon-submenu">
                                                         <li>
                                                             <section className="submenu-view-form-div" data-form-id={`${form.id}`}>
-                                                                <ViewIcon />
+                                                                <ViewIcon style={{height: '20px'}}/>
                                                                 <span data-form-id={`${form.id}`} onClick={handleView}>View form</span>
                                                             </section>
                                                         </li>
                                                         <li>
                                                             <section className="submenu-edit-form-div">
-                                                                <EditIcon />
+                                                                <EditIcon style={{height: '20px'}}/>
                                                                 <span data-form-id={`${form.id}`} onClick={handleEdit}>Edit form</span>
                                                             </section>
                                                         </li>
                                                         <li>
                                                             <section className="submenu-delete-form-div">
-                                                                <DeleteIcon />
+                                                                <DeleteIcon style={{height: '20px'}}/>
                                                                 <span data-form-id={`${form.id}`} onClick={handleDelete}>Delete form</span>
                                                             </section>
                                                         </li>
