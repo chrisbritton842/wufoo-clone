@@ -1,0 +1,115 @@
+.login-nav{
+    align-items: center;
+    background-color: #e66760;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    height: 80px;
+    overflow: visible;
+    padding: 0 1em;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.title-block{
+    color: #6d696e;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.login-title{
+    color: #3a3a3a;
+    font-family: "Whitney A","Whitney B";
+    font-size: 27.947px;
+    line-height: 27.947px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.login-paragraph{
+    color: #6d696e;
+    font-family: "Whitney A","Whitney B";
+    font-size: 15.9643px;
+    line-height: 24px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.login-form-parent{
+    box-sizing: border-box;
+    color: #6d696e;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.login-login-form{
+    background-color: #f8fafb;
+    border: 1px solid #ede8e8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #6d696e;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    margin: 0;
+    padding: 3em 2em;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.login-email-input{
+    background-color: #fff;
+    border: 1px solid #ede8e8;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    cursor: text;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: 0;
+    outline: 0;
+    padding: 0 .5em;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.radio-btn-div{
+    box-sizing: border-box;
+    color: #6d696e;
+    display: block;
+    float: left;
+    font-family: "Whitney A","Whitney B";
+    font-size: .833em;
+    line-height: 26.0596px;
+    margin: 0;
+    padding-right: 1em;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    display: block;
+    max-width: 1200px;
+}
+
+.login-radio-input{
+    margin: 5px;
+}

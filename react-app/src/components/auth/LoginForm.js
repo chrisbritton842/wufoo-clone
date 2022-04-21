@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { login, signUp } from '../../store/session';
+import './LoginForm.css';
 
 const LoginForm = () => {
+  let history = useHistory();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -75,21 +77,31 @@ const LoginForm = () => {
     return <Redirect to={`/forms/${user.id}`} />;
   }
 
+  const handleLogo = () => {
+    history.push('/');
+  };
+
   return (
     <div className="login-wrapper">
       <div className="login-container">
+        <nav className="login-nav">
+          <div className="svg-logo">
+              <img className="rare-form-logo-signup" src="signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+          </div>
+        </nav>
         <section className="title-block">
-          <h1>Welcome to Rareform!</h1>
-          <p>Create an account or log in</p>
+          <h1 className="login-title">Welcome to Rareform!</h1>
+          <h3 className="login-paragraph">Create an account or log in</h3>
         </section>
         <section className="login-form-parent">
           {!showSignup && (
-            <form onSubmit={onLogin}>
+            <form className="login-login-form" onSubmit={onLogin}>
               <div>
                 {errors.find(e => e.includes('email')) && (
                   <span>{errors.find(e => e.includes('email')).slice(8)}</span>
                 )}
                 <input
+                  className='login-email-input'
                   name='email'
                   type='email'
                   placeholder='EMAIL ADDRESS'
@@ -99,11 +111,11 @@ const LoginForm = () => {
               </div>
               <div className="radio-btn-div">
                 <span className="sign-up-span">
-                  <input type="radio" checked={false} onChange={handleSignUpRadio}/>
+                  <input className="login-radio-input" type="radio" checked={false} onChange={handleSignUpRadio}/>
                   Sign up for a free account
                 </span>
                 <span className="login-span">
-                  <input type="radio" checked={true} onChange={handleLoginRadio}/>
+                  <input className="login-radio-input" type="radio" checked={true} onChange={handleLoginRadio}/>
                   Login to my account
                 </span>
               </div>
