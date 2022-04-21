@@ -27,7 +27,9 @@ const ViewForm = () => {
 
     const handleSubmitForm = () => {
         dispatch(entryActions.createEntry(date, email, number, telephone, text, textArea, url, formId));
-        history.push('/endpage')
+        console.log("USER: ", user)
+        if (user) return history.push(`/entry-manager/${formId}`);
+        history.push('/endpage');
     };
 
     const handleDateInput = (e) => {
@@ -59,7 +61,7 @@ const ViewForm = () => {
     };
 
     useEffect(() => {
-        return dispatch(formActions.getForms(user.id))
+        dispatch(formActions.getForms(user.id))
     }, [dispatch, user]);
 
     return (

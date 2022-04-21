@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Redirect } from "react-router-dom";
 import { login } from '../../store/session';
+import './SplashPage.css'
 
 const SplashPage = () => {
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const SplashPage = () => {
             <div className="header-bar">
                 <div className="nav-container">
                     <div className="svg-logo">
-
+                        <img className="rare-form-logo" src="splash_form.png" alt="Logo for RareForm website" style={{height: "50px"}}></img>
                     </div>
                     <div className="nav-btns">
                         <button type="button" className="top-sign-up" onClick={handleSignUp}>SIGN UP</button>
@@ -40,16 +41,16 @@ const SplashPage = () => {
             </div>
             <div className="banner-container">
                 <div className="left-banner">
-                    <h1>Easy-to-Use Online Form Builder For Every Organization</h1>
+                    <h1 className="banner-h1">Easy-to-Use Online Form Builder For Every Organization</h1>
                     <p>Cloud-based form builder that makes it easy to create registration forms, application forms, surveys, contact forms, payment forms and more.</p>
                     <div className="banner-btn-row">
                         <button type="button" className="sign-up-free" onClick={handleSignUp}>SIGN UP FREE</button>
                         <button type="button" className="live-demo" onClick={handleDemo}>LIVE DEMO</button>
                     </div>
                 </div>
-                <div className="right-banner">
+                {/* <div className="right-banner"> */}
                     <img className="dinosaur-form-img" src="https://www.wufoo.com/wp-content/uploads/2019/10/wufoo-online-form-builder.png" alt="Dinosaurs building an html form"/>
-                </div>
+                {/* </div> */}
             </div>
             <nav className="contact-me-nav">
 
