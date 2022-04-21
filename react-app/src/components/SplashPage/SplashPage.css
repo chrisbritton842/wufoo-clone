@@ -86,10 +86,16 @@
     box-sizing: border-box;
     color: #6e6c6c;
     display: flex;
+    flex-direction: row-reverse;
     font-family: National,Helvetica,Arial,sans-serif;
     font-size: 18.96px;
     font-weight: 300;
     line-height: 31.284px;
+    margin: auto;
+    margin-top: 60px;
+    max-width: 77rem;
+    padding: 0 1rem;
+    position: relative;
     width: 100%;
 }
 
@@ -120,7 +126,7 @@
     margin: 50px;
     max-width: 100%;
     text-align: right;
-    width: 400px;
+    width: 500px;
 }
 
 .banner-h1{
