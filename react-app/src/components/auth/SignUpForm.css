@@ -38,3 +38,175 @@ ul#menu{
     text-decoration: none;
     word-wrap: break-word;
 }
+
+section.heading{
+    box-sizing: border-box;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    margin: 0 auto 2em;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.powerful-forms{
+    color: #3a3a3a;
+    font-family: "Whitney A","Whitney B";
+    font-size: 34.128px;
+    font-weight: 300;
+    line-height: 34.128px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.row{
+    display:flex;
+    justify-content: center;
+}
+
+.signup-form-container{
+    box-sizing: border-box;
+    margin: 0 4em 0 0;
+    word-wrap: break-word;
+}
+
+.signup-form{
+    background-color: #f8fafb;
+    border: 1px solid #ede8e8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #6d696e;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    padding: 1.5em 2em 3em;
+    position: relative;
+    width: 771.59px;
+    word-wrap: break-word;
+}
+
+.main-input{
+    box-sizing: border-box;
+    color: #6d696e;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    line-height: 31.284px;
+    margin: 0 auto 1em;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.signup-label{
+    box-sizing: border-box;
+    clear: both;
+    color: #6d696e;
+    cursor: default;
+    display: flex;
+    font-family: "Whitney A","Whitney B";
+    font-size: .8em;
+    justify-content: space-between;
+    line-height: 25.0272px;
+    margin-bottom: .1em;
+    overflow: hidden;
+    padding-left: .3em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+.signup-email-input{
+    background-color: #fff;
+    border: 1px solid #ede8e8;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    cursor: text;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: 0;
+    outline: 0;
+    padding: 0 .5em;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.signup-password-input{
+    background-color: #fff;
+    border: 1px solid #ede8e8;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    cursor: text;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: 0;
+    outline: 0;
+    padding: 0 3em 0 .5em;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.signup-username-input{
+    background-color: #fff;
+    border: 1px solid #ede8e8;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    cursor: text;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: 0;
+    outline: 0;
+    padding: 0 .5em;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.signup-submit{
+    background-color: #61e064;
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 1.3em;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: 1em auto;
+    outline: 0;
+    padding: 5px 32px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    word-wrap: break-word;
+}

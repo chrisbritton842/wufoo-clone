@@ -84,19 +84,19 @@ const SignUpForm = () => {
         </ul>
       </nav>
       <section className="heading">
-        <h1>Create powerful forms today.</h1>
+        <h1 className="powerful-forms">Create powerful forms today.</h1>
       </section>
       <div className="row">
         <div className="left-column">
           <div className="signup-form-container">
-            <form onSubmit={onSignUp}>
+            <form className="signup-form" onSubmit={onSignUp}>
               <div>
                 {errors.map((error, ind) => (
                   <div key={ind}>{error}</div>
                 ))}
               </div>
-              <div>
-                <label>
+              <div className="main-input">
+                <label className="signup-label">
                   <span>EMAIL ADDRESS</span>
                   {!validEmail && (
                     <span>Your valid email</span>
@@ -104,14 +104,15 @@ const SignUpForm = () => {
                 </label>
                 <input
                   type='email'
+                  className='signup-email-input'
                   name='email'
                   placeholder='Your valid email'
                   onChange={updateEmail}
                   value={email}
                 ></input>
               </div>
-              <div>
-                <label>
+              <div className="main-input">
+                <label className="signup-label">
                   <span>PASSWORD</span>
                   {!validPassword && (
                     <span>At least 7 characters with one letter and number</span>
@@ -119,14 +120,15 @@ const SignUpForm = () => {
                 </label>
                 <input
                   type='password'
+                  className='signup-password-input'
                   name='password'
                   placeholder='At least 7 characters with one letter and number'
                   onChange={updatePassword}
                   value={password}
                 ></input>
               </div>
-              <div>
-                <label>
+              <div className="main-input">
+                <label className="signup-label">
                   <span>USERNAME</span>
                   {!validUsername && (
                     <span>Letters and numbers only please</span>
@@ -134,19 +136,17 @@ const SignUpForm = () => {
                 </label>
                 <input
                   type='text'
+                  className='signup-username-input'
                   name='username'
                   placeholder='Your custom wufoo URL'
                   onChange={updateUsername}
                   value={username}
                 ></input>
               </div>
-              <button type='submit'>CONFIRM</button>
+              <button className="signup-submit" type='submit'>CONFIRM</button>
             </form>
           </div>
         </div>
-        <aside className="feature-list">
-
-        </aside>
       </div>
     </div>
 
