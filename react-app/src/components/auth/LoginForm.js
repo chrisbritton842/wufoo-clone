@@ -138,7 +138,7 @@ const LoginForm = () => {
             </form>
           )}
           {showSignup && (
-            <form onSubmit={onSignUp}>
+            <form className="login-signup-form" onSubmit={onSignUp}>
               <div>
                 {errors.map((error, ind) => (
                   <div key={ind}>{error}</div>
@@ -149,6 +149,7 @@ const LoginForm = () => {
                   <span>Your valid email</span>
                 )}
                 <input
+                  className='login-email-input'
                   name='email'
                   type='email'
                   placeholder='EMAIL ADDRESS'
@@ -158,7 +159,7 @@ const LoginForm = () => {
               </div>
               <div className="radio-btn-div">
                 <span className="sign-up-span">
-                  <input type="radio" checked={true} onChange={handleSignUpRadio}/>
+                  <input className="login-radio-input" type="radio" checked={true} onChange={handleSignUpRadio}/>
                   Sign up for a free account
                 </span>
                 <span className="login-span">
@@ -171,6 +172,7 @@ const LoginForm = () => {
                   <span>At least 7 characters with one letter and number</span>
                 )}
                 <input
+                  className='login-password-input'
                   name='password'
                   type='password'
                   placeholder='PASSWORD'
@@ -183,6 +185,7 @@ const LoginForm = () => {
                     <span>Letters and numbers only please</span>
                 )}
                 <input
+                  className='login-username-input'
                   name='username'
                   type='text'
                   placeholder='USERNAME'
@@ -191,7 +194,7 @@ const LoginForm = () => {
                 />
               </div>
               <div className="sign-up-btn-div">
-                <button type='submit'>SIGN UP</button>
+                <button className="login-confirm-button" type='submit'>SIGN UP</button>
               </div>
             </form>
           )}

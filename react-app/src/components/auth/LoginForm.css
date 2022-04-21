@@ -73,6 +73,25 @@
     word-wrap: break-word;
 }
 
+.login-signup-form{
+    background-color: #f8fafb;
+    border: 1px solid #ede8e8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #6d696e;
+    display: flex;
+    flex-direction: column;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    height: 495.83px;
+    line-height: 31.284px;
+    margin: 0;
+    padding: 3em 2em;
+    position: relative;
+    width:  612.85px;
+    word-wrap: break-word;
+}
+
 .login-email-input{
     background-color: #fff;
     border: 1px solid #ede8e8;
@@ -163,6 +182,28 @@
     text-transform: uppercase;
     user-select: none;
     white-space: pre;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.login-username-input{
+    background-color: #fff;
+    border: 1px solid #ede8e8;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    cursor: text;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    font-weight: 400;
+    height: 2.5em;
+    line-height: normal;
+    margin: .5em auto 1em;
+    outline: 0;
+    padding: 0 .5em;
+    position: relative;
     width: 100%;
     word-wrap: break-word;
 }
