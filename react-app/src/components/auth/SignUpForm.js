@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -64,17 +65,21 @@ const SignUpForm = () => {
     history.push('/login');
   };
 
+  const handleLogo = () => {
+    history.push('/');
+  };
+
   return (
     <div className="signup-wrapper">
-      <nav className="signup-nav">
+      <nav className="signup-nav-1">
         <ul id="menu">
           <li className="logo-li">
-            <Link to="/">
-
-            </Link>
+              <div className="svg-logo">
+                  <img className="rare-form-logo-signup" src="signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+              </div>
           </li>
           <li>
-            <button type="button" onClick={handleLogin}>LOGIN</button>
+            <button className="signup-login" type="button" onClick={handleLogin}>LOGIN</button>
           </li>
         </ul>
       </nav>

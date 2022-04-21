@@ -1,0 +1,40 @@
+.signup-nav-1{
+    background-color: #e66760;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 18.96px;
+    overflow: visible;
+    padding: 0 1em;
+    position: relative;
+    word-wrap: break-word;
+    zoom: 1;
+}
+
+ul#menu{
+    display:flex;
+    align-items: center;
+    height:80px;
+}
+
+.rare-form-logo-signup{
+    cursor:pointer;
+}
+
+.signup-login{
+    background-color: transparent;
+    border:none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: "Whitney A","Whitney B";
+    font-size: 17.064px;
+    font-weight: 500;
+    line-height: 80px;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    word-wrap: break-word;
+}
