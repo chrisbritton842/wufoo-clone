@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as formActions from '../../store/forms';
@@ -75,20 +75,20 @@ const UserForms = () => {
         dispatch(formActions.deleteForm(user.id, formId));
     };
 
+    const handleLogo = () => {
+        history.push('/');
+      };
 
     return (
         <div className="user-forms-wrapper">
             <nav className="user-forms-header">
                 <ul id="menu">
                     <li className="logo-li">
-                        <Link to="/">
-
-                        </Link>
+                        <div className="svg-logo">
+                            <img className="rare-form-logo-user-forms" src="/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                        </div>
                     </li>
                     <li>
-                        <div className="avatar-circle-div">
-
-                        </div>
                         <label className="user-forms-username" for="check">{user.username}</label>
                         <input id="check" type="checkbox" name="menu" />
                         <ul class="submenu">

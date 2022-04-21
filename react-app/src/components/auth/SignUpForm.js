@@ -75,7 +75,7 @@ const SignUpForm = () => {
         <ul id="menu">
           <li className="logo-li">
               <div className="svg-logo">
-                  <img className="rare-form-logo-signup" src="signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                  <img className="rare-form-logo-signup" src="/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
               </div>
           </li>
           <li>

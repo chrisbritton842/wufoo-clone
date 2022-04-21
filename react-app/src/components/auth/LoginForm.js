@@ -86,7 +86,7 @@ const LoginForm = () => {
       <div className="login-container">
         <nav className="login-nav">
           <div className="svg-logo">
-              <img className="rare-form-logo-signup" src="signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+              <img className="rare-form-logo-signup" src="/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
           </div>
         </nav>
         <section className="title-block">

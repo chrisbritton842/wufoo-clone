@@ -1,5 +1,7 @@
 #menu{
     display: flex;
+    font-size: 15px;
+    height: 55px;
     justify-content: space-between;
     position: relative;
     width:100%;
@@ -7,7 +9,7 @@
     margin:0;
     padding:0 10px;
     background:#e66760;
-    color:#ffda68;
+    color:#fff;
     box-shadow:0 -1px rgba(0,0,0,.5) inset;
   }
 
@@ -20,6 +22,10 @@
 .user-forms-username{
     position:relative;
     display:block;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 8px;
     padding:0 18px 0 12px;
     line-height:3em;
     transition:background 0.3s;
