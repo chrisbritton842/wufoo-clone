@@ -90,7 +90,7 @@ const LoginForm = () => {
           </div>
         </nav>
         <section className="title-block">
-          <h1 className="login-title">Welcome to Rareform!</h1>
+          <h1 className="login-title">Welcome to RareForm!</h1>
           <h3 className="login-paragraph">Create an account or log in</h3>
         </section>
         <section className="login-form-parent">
@@ -124,6 +124,7 @@ const LoginForm = () => {
                   <span>{errors.find(e => e.includes('password')).slice(11)}</span>
                 )}
                 <input
+                  className='login-password-input'
                   name='password'
                   type='password'
                   placeholder='PASSWORD'
@@ -132,7 +133,7 @@ const LoginForm = () => {
                 />
               </div>
               <div className="confirm-btn-div">
-                <button type='submit'>CONFIRM</button>
+                <button className="login-confirm-button" type='submit'>CONFIRM</button>
               </div>
             </form>
           )}
