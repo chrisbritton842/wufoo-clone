@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    forms = db.relationship("Form", back_populates="owner")
+    forms = db.relationship("Form", back_populates="owner", cascade="all, delete-orphan")
 
     @property
     def password(self):
