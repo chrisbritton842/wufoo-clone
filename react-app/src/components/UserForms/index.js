@@ -81,8 +81,7 @@ const UserForms = () => {
         history.push('/');
     };
 
-    const handleDropdown = (e) => {
-        const formId = parseInt(e.target.dataset.formId);
+    const handleDropdown = (formId) => {
         setSelectedMenuFormId(formId);
         setShowSubmenu(!showSubmenu);
     };
@@ -141,9 +140,9 @@ const UserForms = () => {
                                 </tr>
                             </thead>
                             <tbody className="uf-tbody">
-                                {forms?.map((form) => {
+                                {forms?.map((form, i) => {
                                     return (
-                                        <tr className="uf-body-tr">
+                                        <tr key={i} className="uf-body-tr">
                                             <td className="body-name">
                                                 <div className="title-cell-div">
                                                     {showTitleEdit && selectedFormId === form.id && (
@@ -164,23 +163,23 @@ const UserForms = () => {
                                                 <div className="all-entries-cell-div">
                                                     <span className="all-entries-span">
                                                         <span>{form.entries.length}</span>
-                                                        <EntriesIcon className="entries-icon" data-form-id={`${form.id}`} onClick={handleEntries} style={{height: '1.25em', width: '1.25em'}}/>
+                                                        <EntriesIcon className="entries-icon" data-form-id={`${form.id}`} onClick={handleEntries} style={{height: '1.5em', width: '1.5em'}}/>
                                                     </span>
                                                 </div>
                                             </td>
                                             <td className="entries-share-td">
                                                 <div className="share-cell-div">
                                                     <span>
-                                                        <ShareIcon data-form-id={`${form.id}`} onClick={handleShare} style={{height: '1.25em', width: '1.25em'}}/>
+                                                        <ShareIcon data-form-id={`${form.id}`} onClick={handleShare} style={{height: '1.5em', width: '1.5em'}}/>
                                                     </span>
                                                 </div>
                                             </td>
                                             <td className="more-td">
                                                 <div className="more-cell-div">
                                                     <span>
-                                                        <MoreIcon  data-form-id={`${form.id}`} onClick={handleDropdown} style={{height: '20px'}}/>
+                                                        <MoreIcon data-form-id={`${form.id}`} onClick={(e) => handleDropdown(e.target.dataset.formId)} style={{height: '1.5em', width: '1.5em'}}/>
                                                     </span>
-                                                    {showSubmenu && selectedMenuFormId === form.id && (
+                                                    {(showSubmenu && selectedMenuFormId === `${form.id}`) && (
                                                         <ul class="more-icon-submenu">
                                                             <li>
                                                                 <section className="submenu-form-div" data-form-id={`${form.id}`}>
