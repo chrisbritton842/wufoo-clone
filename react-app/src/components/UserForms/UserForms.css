@@ -301,7 +301,6 @@ label:after{
   border-spacing: 0 12px;
   box-sizing: border-box;
   color: #333e48;
-  cursor: pointer;
   display: flex;
   font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
   font-size: 15px;
@@ -319,7 +318,6 @@ label:after{
   border-spacing: 0 12px;
   box-sizing: border-box;
   color: #333e48;
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -333,7 +331,7 @@ label:after{
 .form-edit-title{
   border-spacing: 0 12px;
   box-sizing: border-box;
-  cursor: default;
+  cursor: pointer;
   font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
   list-style: none;
   margin-right: 16px;
@@ -358,7 +356,6 @@ label:after{
   border-spacing: 0 12px;
   box-sizing: border-box;
   color: #333e48;
-  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
@@ -374,6 +371,7 @@ label:after{
   border-top: 1px solid #2685c6;
   box-sizing: border-box;
   color: #333e48;
+  cursor: pointer;
   font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
   font-size: 15px;
   list-style: none;
@@ -447,4 +445,18 @@ label:after{
 
 .more-cell-div{
   color: #333e48;
+}
+
+.all-entries-span{
+  align-items: center;
+  border-spacing: 0 12px;
+  box-sizing: border-box;
+  color: #434a54;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.entries-icon{
+  margin: 8px;
 }

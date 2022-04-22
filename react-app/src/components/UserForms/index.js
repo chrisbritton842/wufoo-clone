@@ -155,17 +155,16 @@ const UserForms = () => {
                                                     <div className="form-information">
                                                         <span id={`${form.id}`} className="form-edit-title" onClick={e => handleTitleEdit(e)}>Edit Title</span>
                                                         <div className="recent-entry-date">
-                                                            Recent entry:
-                                                            <span></span>
+                                                            <span>{`Recent entry:  ${form.entries[form.entries.length - 1].created_at}`}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td className="entries-share-td">
                                                 <div className="all-entries-cell-div">
-                                                    <span>
-                                                        <span></span>
-                                                        <EntriesIcon data-form-id={`${form.id}`} onClick={handleEntries} style={{height: '1.25em', width: '1.25em'}}/>
+                                                    <span className="all-entries-span">
+                                                        <span>{form.entries.length}</span>
+                                                        <EntriesIcon className="entries-icon" data-form-id={`${form.id}`} onClick={handleEntries} style={{height: '1.25em', width: '1.25em'}}/>
                                                     </span>
                                                 </div>
                                             </td>
