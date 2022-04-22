@@ -115,8 +115,8 @@ const UserForms = () => {
 
                     </div>
                     <div className="forms-table-div">
-                        <table>
-                            <thead>
+                        <table className="user-forms-table">
+                            <thead className="ufth">
                                 <tr>
                                     <th>
                                         <div>Name</div>

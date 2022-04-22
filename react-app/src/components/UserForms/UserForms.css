@@ -144,3 +144,34 @@ label:after{
 .rare-form-logo-user-forms{
   cursor: pointer;
 }
+
+.user-forms-area{
+  box-sizing: border-box;
+  color: #434a54;
+  display: flex;
+  flex-direction: column;
+  font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+  font-size: 15px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.user-forms-table{
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 12px;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  box-sizing: border-box;
+  color: #434a54;
+  font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+  font-size: 15px;
+  list-style: none;
+  width: 100%;
+}
+
+.ufth{
+  box-sizing: border-box;
+}
