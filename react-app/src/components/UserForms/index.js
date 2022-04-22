@@ -176,7 +176,7 @@ const UserForms = () => {
                                                     </span>
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td className="more-td">
                                                 <div className="more-cell-div">
                                                     <span>
                                                         <MoreIcon  data-form-id={`${form.id}`} onClick={handleDropdown} style={{height: '20px'}}/>
