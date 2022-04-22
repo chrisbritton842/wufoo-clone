@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import { createForm } from '../../store/forms';
 import './BuildForm.css'
@@ -141,37 +141,37 @@ const BuildForm = () => {
                 <div className="form-stage">
                     <div className="left-side">
                         {displayedPanel === 'a' && (
-                            <>
+                            <div className="create-a">
                                 <h3>Standard</h3>
                                 <ul className="left-input-col">
-                                    <li className="text-li">
-                                        <button type="button" onClick={handleText}>Single Line Text</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleText}>Single Line Text</button>
                                     </li>
-                                    <li className="paragraph-li">
-                                        <button type="button" onClick={handleParagraph}>Paragraph Text</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleParagraph}>Paragraph Text</button>
                                     </li>
-                                    <li className="number-li">
-                                        <button type="button" onClick={handleNumber}>Number</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleNumber}>Number</button>
                                     </li>
-                                    <li className="url-li">
-                                        <button type="button" onClick={handleUrl}>Url</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleUrl}>Url</button>
                                     </li>
                                 </ul>
                                 <ul className="right-input-col">
-                                    <li className="email-li">
-                                        <button type="button" onClick={handleEmail}>Email</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleEmail}>Email</button>
                                     </li>
-                                    <li className="telephone-li">
-                                        <button type="button" onClick={handleTelephone}>Phone</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleTelephone}>Phone</button>
                                     </li>
-                                    <li className="date-li">
-                                        <button type="button" onClick={handleDate}>Date</button>
+                                    <li className="create-li">
+                                        <button className="create-input-btn" type="button" onClick={handleDate}>Date</button>
                                     </li>
                                 </ul>
-                            </>
+                            </div>
                         )}
                         {displayedPanel === 'b' && (
-                            <>
+                            <div className="create-b">
                                 <div>
                                     <label for="label-edit-field">Field Label</label>
                                     <textarea id="label-edit-field" value={selectedFieldLabel} onChange={e => setSelectedFieldLabel(e.target.value)}></textarea>
@@ -193,10 +193,10 @@ const BuildForm = () => {
                                     <button type="button" onClick={handleEdit}>Edit</button>
                                     <button type="button" onClick={handleDelete}>Delete</button>
                                 </div>
-                            </>
+                            </div>
                         )}
                         {displayedPanel === 'c' && (
-                            <>
+                            <div className="create-c">
                                 <div>
                                     <label for="title-edit-field">Form Title</label>
                                     <input id="title-edit-field" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
@@ -208,7 +208,7 @@ const BuildForm = () => {
                                 <div>
                                     <button type="button" onClick={() => setDisplayedPanel('a')}>Done</button>
                                 </div>
-                            </>
+                            </div>
                         )}
                     </div>
                     <div className="form-main">
