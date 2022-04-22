@@ -113,18 +113,22 @@ const BuildForm = () => {
         history.push(`/forms/${user.id}`)
     };
 
+    const handleLogo = () => {
+        history.push('/');
+    };
+
     return (
         <div className="build-form-wrapper">
             <div className="build-container">
                 <div className="nav-div">
                     <ul id="build-menu">
                         <li className="build-menu-li">
-                            <Link to="/">
-
-                            </Link>
+                            <div className="svg-logo">
+                                <img className="rare-form-logo-user-forms" src="/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                            </div>
                         </li>
                         <li className="build-menu-li">
-                            <label className="build-form-label" for="check">Account</label>
+                            <label className="build-form-label" for="check">{user.username}</label>
                             <input id="check" type="checkbox" name="menu" />
                             <ul className="build-submenu">
                                 <li>

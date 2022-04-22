@@ -4,10 +4,11 @@
 }
 
 .build-container{
-    width:1000px;
+    width:100%;
 }
 
 #build-menu{
+    align-items: center;
     display:flex;
     justify-content: space-between;
     position: relative;
@@ -15,8 +16,10 @@
     margin:0;
     padding:0 10px;
     background:#e66760;
-    color:#ffda68;
+    color:#fff;
     box-shadow:0 -1px rgba(0,0,0,.5) inset;
+    font-size: 15px;
+    width:100%;
 }
 
 .build-menu-li{
@@ -28,8 +31,12 @@
 .build-form-label{
     position:relative;
     display:block;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 8px;
     padding:0 18px 0 12px;
-    line-height:80px;
+    line-height:3em;
     transition:background 0.3s;
     cursor:pointer;
 }
@@ -51,28 +58,52 @@
 
 .build-submenu{
     max-height:0;
+    margin-top: 18px;
     padding:0;
     overflow:hidden;
     list-style-type:none;
     background:white;
-    box-shadow:0 0 1px rgba(0,0,0,.3);
+    box-shadow:1px 1px 1px 1px rgba(0,0,0,.3);
     transition:max-height 0.5s ease-out;
     position:absolute;
     min-width:100%;
+    cursor:pointer;
+    z-index: 1;
 }
 
 .build-logout-div{
-    display:block;
+    /* display:block;
     padding:12px;
     color:black;
     text-decoration:none;
     box-shadow:0 -1px rgba(0,0,0,.5) inset;
     transition:background .3s;
+    white-space:nowrap; */
+    display:block;
+    text-decoration:none;
+    transition:background .3s;
     white-space:nowrap;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #434a54;
+    cursor: pointer;
+    display: block;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.25;
+    list-style: none;
+    outline: none;
+    padding: 16px 24px;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .build-logout-div:hover{
-    background:rgba(0,0,0,.3);
+    background:#e6e9ee;
 }
 
 #check{display:none}
