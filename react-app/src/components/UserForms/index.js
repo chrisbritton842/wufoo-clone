@@ -118,25 +118,25 @@ const UserForms = () => {
                         <table className="user-forms-table">
                             <thead className="ufth">
                                 <tr>
-                                    <th>
-                                        <div>Name</div>
+                                    <th className="uf-th">
+                                        <div className="uf-th-name">Name</div>
                                     </th>
-                                    <th>
-                                        <div>All Entries</div>
+                                    <th className="uf-th">
+                                        <div className="uf-th-all-entries">All Entries</div>
                                     </th>
-                                    <th>
-                                        <div>Share</div>
+                                    <th className="uf-th">
+                                        <div className="uf-th-share">Share</div>
                                     </th>
-                                    <th>
-                                        <div>More</div>
+                                    <th className="uf-th">
+                                        <div className="uf-th-more">More</div>
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="uf-tbody">
                                 {forms?.map((form) => {
                                     return (
-                                        <tr>
-                                            <td>
+                                        <tr className="uf-body-tr">
+                                            <td className="body-name">
                                                 <div className="title-cell-div">
                                                     {showTitleEdit && selectedFormId === form.id && (
                                                         <input type="text" value={editedTitle} onChange={e => setEditedTitle(e.target.value)} onKeyUp={editTitle}></input>
@@ -145,7 +145,7 @@ const UserForms = () => {
                                                         <b>{form.title}</b>
                                                     )}
                                                     <div className="form-information">
-                                                        <span id={`${form.id}`} onClick={e => handleTitleEdit(e)}>Edit Title</span>
+                                                        <span id={`${form.id}`} className="form-edit-title" onClick={e => handleTitleEdit(e)}>Edit Title</span>
                                                         <div className="recent-entry-date">
                                                             Recent entry:
                                                             <span></span>
