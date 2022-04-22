@@ -31,7 +31,7 @@ const SplashPage = () => {
             <div className="header-bar">
                 <div className="nav-container">
                     <div className="svg-logo">
-                        <img className="rare-form-logo" src="/splash_form.png" alt="Logo for RareForm website" style={{height: "50px"}}></img>
+                        <img className="rare-form-logo" src="../../../../static/splash_form.png" alt="Logo for RareForm website" style={{height: "50px"}}></img>
                     </div>
                     <div className="nav-btns">
                         <button type="button" className="top-sign-up" onClick={handleSignUp}>SIGN UP</button>

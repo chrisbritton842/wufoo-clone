@@ -124,7 +124,7 @@ const BuildForm = () => {
                     <ul id="build-menu">
                         <li className="build-menu-li">
                             <div className="svg-logo">
-                                <img className="rare-form-logo-user-forms" src="/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                                <img className="rare-form-logo-user-forms" src="../../../../static/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
                             </div>
                         </li>
                         <li className="build-menu-li">
