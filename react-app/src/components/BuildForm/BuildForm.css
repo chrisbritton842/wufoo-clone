@@ -131,7 +131,7 @@
     height: auto;
     letter-spacing: .13px;
     margin: 0;
-    margin-top: -15px;
+    margin-top: 0px;
     min-height: 228.66px;
     padding: 0;
     text-align: left;
@@ -505,4 +505,438 @@
     white-space: pre-wrap;
     width: 70%;
     word-wrap: break-word;
+}
+
+.form-main{
+    color: #000;
+    float: left;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 620px;
+}
+
+.form-info-div{
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    margin: 0 0 5px;
+    padding: 10px 1% 1.1em;
+    position: relative;
+    text-align: left;
+}
+
+.form-info-title{
+    clear: left;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 160%;
+    font-weight: 400;
+    letter-spacing: .13px;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: left;
+}
+
+.form-info-description{
+    color: #555;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    letter-spacing: .13px;
+    line-height: 135%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.custom-text-div{
+    background-color: transparent;
+    border: 1px dotted transparent;
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-text-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-text-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.custom-textarea-div{
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-textarea-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-textarea-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    height: 10em;
+    list-style: none;
+    margin: 0;
+    max-width: 100%;
+    min-width: 100%;
+    opacity: 1;
+    padding: 2px 0;
+    white-space: pre-wrap;
+    width: 293px;
+    word-wrap: break-word;
+}
+
+.custom-number-div{
+    background-color: transparent;
+    border: 1px dotted transparent;
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-number-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-number-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.custom-url-div{
+    background-color: transparent;
+    border: 1px dotted transparent;
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-url-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-url-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.custom-email-div{
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-email-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-email-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.custom-phone-div{
+    background-color: transparent;
+    border: 1px dotted transparent;
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-phone-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-phone-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.custom-date-div{
+    background-color: transparent;
+    border: 1px dotted transparent;
+    clear: both;
+    color: #000;
+    cursor: pointer;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0 0 1px;
+    padding: 6px 1% 9px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.custom-date-label{
+    border-style: none;
+    color: #222;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 95%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.custom-date-input{
+    background-color: #fff;
+    border-color: #7c7c7c #c3c3c3 #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #666;
+    cursor: pointer;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    list-style: none;
+    margin: 0;
+    opacity: 1;
+    padding: 2px 0;
+}
+
+.bottom-save-form-btn{
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: -webkit-linear-gradient(top, #fff, #e9e9e9);
+    border-color: #dedede #bbb #bfbfbf #dedede;
+    border-radius: 11px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+    color: #63a142;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Lucida Grande",Tahoma,Arial,sans-serif;
+    font-size: 100%;
+    font-weight: 700;
+    letter-spacing: .13px;
+    line-height: 130%;
+    margin: 0 .7em 0 0;
+    outline: none;
+    padding: 5px 10px 6px;
+    text-align: center;
+    text-decoration: none;
 }

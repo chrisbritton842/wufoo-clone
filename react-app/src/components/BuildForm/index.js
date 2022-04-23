@@ -212,53 +212,53 @@ const BuildForm = () => {
                     </div>
                     <div className="form-main">
                         <div className="form-info-div" onClick={() => setDisplayedPanel('c')}>
-                            <h2>{title}</h2>
-                            <div>{description}</div>
+                            <h2 className="form-info-title">{title}</h2>
+                            <div className="form-info-description">{description}</div>
                         </div>
                         <div className="form-inputs">
                             {inputs.map((input, idx) => {
                                 return (
                                     <>
                                         {input === 1 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="text" onClick={handleFieldSelect}></input>
+                                            <div className="custom-text-div">
+                                                <label className="custom-text-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-text-input" id={`${idx}`} type="text" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 2 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <textarea id={`${idx}`} onClick={handleFieldSelect}></textarea>
+                                            <div className="custom-textarea-div">
+                                                <label className="custom-textarea-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <textarea className="custom-textarea-input" id={`${idx}`} onClick={handleFieldSelect}></textarea>
                                             </div>
                                         )}
                                         {input === 3 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="number" onClick={handleFieldSelect}></input>
+                                            <div className="custom-number-div">
+                                                <label className="custom-number-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-number-input" id={`${idx}`} type="number" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 4 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="url" onClick={handleFieldSelect}></input>
+                                            <div className="custom-url-div">
+                                                <label className="custom-url-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-url-input" id={`${idx}`} type="url" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 5 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="email" onClick={handleFieldSelect}></input>
+                                            <div className="custom-email-div">
+                                                <label className="custom-email-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-email-input" id={`${idx}`} type="email" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 6 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="telephone" onClick={handleFieldSelect}></input>
+                                            <div className="custom-phone-div">
+                                                <label className="custom-phone-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-phone-input" id={`${idx}`} type="telephone" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                         {input === 7 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="date" onClick={handleFieldSelect}></input>
+                                            <div className="custom-date-div">
+                                                <label className="custom-date-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="custom-date-input" id={`${idx}`} type="date" onClick={handleFieldSelect}></input>
                                             </div>
                                         )}
                                     </>
@@ -267,7 +267,7 @@ const BuildForm = () => {
                         </div>
                         <div className="bottom-buttons">
                             <span className="left-btns">
-                                <button type="button" onClick={handleSaveForm}>Save Form</button>
+                                <button className="bottom-save-form-btn" type="button" onClick={handleSaveForm}>Save Form</button>
                             </span>
                         </div>
                     </div>
