@@ -172,12 +172,12 @@ const BuildForm = () => {
                         )}
                         {displayedPanel === 'b' && (
                             <div className="create-b">
-                                <div>
-                                    <label for="label-edit-field">Field Label</label>
+                                <div className="field-label-div">
+                                    <label className="field-label-label" for="label-edit-field">Field Label</label>
                                     <textarea id="label-edit-field" value={selectedFieldLabel} onChange={e => setSelectedFieldLabel(e.target.value)}></textarea>
                                 </div>
-                                <div>
-                                    <label for="type-select">Field Type</label>
+                                <div className="field-type-select">
+                                    <label className="field-select-label" for="type-select">Field Type</label>
                                     <select id="type-select" value={selectedInputType} onChange={e => setSelectedInputType(e.target.value)}>
                                         <option value={1}>Single Line Text</option>
                                         <option value={2}>Paragraph Text</option>
@@ -187,11 +187,10 @@ const BuildForm = () => {
                                         <option value={6}>Phone</option>
                                         <option value={7}>Date</option>
                                     </select>
-
                                 </div>
-                                <div>
-                                    <button type="button" onClick={handleEdit}>Edit</button>
-                                    <button type="button" onClick={handleDelete}>Delete</button>
+                                <div className="field-edit-delete-btns">
+                                    <button className="field-edit-btn" type="button" onClick={handleEdit}>Edit</button>
+                                    <button className="field-delete-btn" type="button" onClick={handleDelete}>Delete</button>
                                 </div>
                             </div>
                         )}
