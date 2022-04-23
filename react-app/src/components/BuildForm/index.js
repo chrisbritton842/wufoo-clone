@@ -17,22 +17,26 @@ const BuildForm = () => {
     const [selectedFieldIndex, setSelectedFieldIndex] = useState(null);
     const [selectedInputType, setSelectedInputType] = useState(null);
     const [selectedFieldLabel, setSelectedFieldLabel] = useState('');
+    const [showInputMessage, setShowInputMessage] = useState(false);
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());
     };
 
     const handleText = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 1, ]);
         setLabels((labels) => [...labels, "Untitled"]);
     };
 
     const handleParagraph = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 2, ]);
         setLabels((labels) => [...labels, "Untitled"]);
     };
 
     const handleNumber = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 3, ]);
         setLabels((labels) => [...labels, "Number"]);
     };
@@ -43,16 +47,19 @@ const BuildForm = () => {
     };
 
     const handleEmail = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 5, ]);
         setLabels((labels) => [...labels, "Email"]);
     };
 
     const handleTelephone = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 6, ]);
         setLabels((labels) => [...labels, "Phone Number"]);
     };
 
     const handleDate = () => {
+        if (showInputMessage) setShowInputMessage(false);
         setInputs((inputs) => [...inputs, 7, ]);
         setLabels((labels) => [...labels, "Date"]);
     };
@@ -109,8 +116,12 @@ const BuildForm = () => {
     };
 
     const handleSaveForm = () => {
-        dispatch(createForm(title, inputs, labels, description, user.id));
-        history.push(`/forms/${user.id}`)
+        const deleted = inputs.every(el => el === 0);
+        if (inputs.length && !deleted) {
+            dispatch(createForm(title, inputs, labels, description, user.id));
+            return history.push(`/forms/${user.id}`);
+        }
+        setShowInputMessage(true);
     };
 
     const handleLogo = () => {
@@ -215,6 +226,11 @@ const BuildForm = () => {
                             <h2 className="form-info-title">{title}</h2>
                             <div className="form-info-description">{description}</div>
                         </div>
+                        {showInputMessage && (
+                            <div>
+                                <p>Please add a field to your form before saving. You can always edit your title, description, and labels later!</p>
+                            </div>
+                        )}
                         <div className="form-inputs">
                             {inputs.map((input, idx) => {
                                 return (
