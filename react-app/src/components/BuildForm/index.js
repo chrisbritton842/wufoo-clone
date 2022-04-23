@@ -196,16 +196,16 @@ const BuildForm = () => {
                         )}
                         {displayedPanel === 'c' && (
                             <div className="create-c">
-                                <div>
-                                    <label for="title-edit-field">Form Title</label>
+                                <div className="title-edit-field-div">
+                                    <label className="title-edit-field-label" for="title-edit-field">Form Title</label>
                                     <input id="title-edit-field" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
                                 </div>
-                                <div>
-                                    <label for="description-edit-field">Description</label>
+                                <div className="description-edit-field-div">
+                                    <label className="description-edit-field-label" for="description-edit-field">Description</label>
                                     <textarea id="description-edit-field" value={description} onChange={e => setDescription(e.target.value)}></textarea>
                                 </div>
                                 <div>
-                                    <button type="button" onClick={() => setDisplayedPanel('a')}>Done</button>
+                                    <button className="field-edit-btn" type="button" onClick={() => setDisplayedPanel('a')}>Done</button>
                                 </div>
                             </div>
                         )}
