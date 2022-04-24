@@ -289,8 +289,6 @@ const BuildForm = () => {
                     </div>
                 </div>
             </div>
-            <footer></footer>
-
         </div>
     )
 }

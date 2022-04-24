@@ -21,6 +21,9 @@ const UserForms = () => {
     const [showSubmenu, setShowSubmenu] = useState(false);
     const [selectedMenuFormId, setSelectedMenuFormId] = useState(null);
 
+    console.log(selectedMenuFormId)
+    console.log(showSubmenu)
+
     let history = useHistory();
 
     const handleLogout = () => {
@@ -79,11 +82,6 @@ const UserForms = () => {
 
     const handleLogo = () => {
         history.push('/');
-    };
-
-    const handleDropdown = (formId) => {
-        setSelectedMenuFormId(formId);
-        setShowSubmenu(!showSubmenu);
     };
 
     return (
@@ -177,7 +175,7 @@ const UserForms = () => {
                                             <td className="more-td">
                                                 <div className="more-cell-div">
                                                     <span>
-                                                        <MoreIcon data-form-id={`${form.id}`} onClick={(e) => handleDropdown(e.target.dataset.formId)} style={{height: '1.5em', width: '1.5em'}}/>
+                                                        <MoreIcon className="more-icon" data-form-id={`${form.id}`} onClick={(e) => { setSelectedMenuFormId(e.currentTarget.dataset.formId); setShowSubmenu(!showSubmenu);}} style={{height: '1.5em', width: '1.5em'}}/>
                                                     </span>
                                                     {(showSubmenu && selectedMenuFormId === `${form.id}`) && (
                                                         <ul class="more-icon-submenu">
@@ -211,6 +209,10 @@ const UserForms = () => {
                     </div>
                 </div>
             </div>
+            <script>
+
+
+            </script>
         </div>
     )
 }

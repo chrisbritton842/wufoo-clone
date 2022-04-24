@@ -459,3 +459,7 @@ label:after{
 .entries-icon{
   margin: 8px;
 }
+
+.more-icon{
+  z-index: 1;
+}

@@ -15,6 +15,8 @@ import EndPage from './components/EndPage';
 import SharePage from './components/ShareForm';
 import FormEntries from './components/FormEntries';
 import { authenticate } from './store/session';
+import { Helmet } from 'react-helmet';
+import favicon from './favicon.ico';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,49 +34,55 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/' exact={true}>
-          <SplashPage />
-        </Route>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/signup' exact={true}>
-          <SignUpForm />
-        </Route>
-        <Route path='/form/:formId' exact={true}>
-          <ViewForm />
-        </Route>
-        <Route path='/endpage' exact={true}>
-          <EndPage />
-        </Route>
-        <ProtectedRoute path='/forms/:userId' exact={true} >
-          <UserForms />
-        </ProtectedRoute>
-        <ProtectedRoute path='/build/:userId' exact={true} >
-          <BuildForm />
-        </ProtectedRoute>
-        <ProtectedRoute path='/edit/:formId' exact={true} >
-          <EditForm />
-        </ProtectedRoute>
-        <ProtectedRoute path='/forms/:formId/share' exact={true}>
-          <SharePage />
-        </ProtectedRoute>
-        <ProtectedRoute path='/entry-manager/:formId' exact={true}>
-          <FormEntries />
-        </ProtectedRoute>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
-        <ProtectedRoute path='/build' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
-      </Switch>
-    </BrowserRouter>
+    <>
+      <Helmet>
+        <title>RareForm</title>
+        <link rel="icon" type="image/png" href={favicon} sizes="512x512"/>
+      </Helmet>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' exact={true}>
+            <SplashPage />
+          </Route>
+          <Route path='/login' exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path='/signup' exact={true}>
+            <SignUpForm />
+          </Route>
+          <Route path='/form/:formId' exact={true}>
+            <ViewForm />
+          </Route>
+          <Route path='/endpage' exact={true}>
+            <EndPage />
+          </Route>
+          <ProtectedRoute path='/forms/:userId' exact={true} >
+            <UserForms />
+          </ProtectedRoute>
+          <ProtectedRoute path='/build/:userId' exact={true} >
+            <BuildForm />
+          </ProtectedRoute>
+          <ProtectedRoute path='/edit/:formId' exact={true} >
+            <EditForm />
+          </ProtectedRoute>
+          <ProtectedRoute path='/forms/:formId/share' exact={true}>
+            <SharePage />
+          </ProtectedRoute>
+          <ProtectedRoute path='/entry-manager/:formId' exact={true}>
+            <FormEntries />
+          </ProtectedRoute>
+          <ProtectedRoute path='/users' exact={true} >
+            <UsersList/>
+          </ProtectedRoute>
+          <ProtectedRoute path='/users/:userId' exact={true} >
+            <User />
+          </ProtectedRoute>
+          <ProtectedRoute path='/build' exact={true} >
+            <h1>My Home Page</h1>
+          </ProtectedRoute>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
