@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Redirect } from "react-router-dom";
 import { login } from '../../store/session';
-import './SplashPage.css'
+import './SplashPage.css';
 
 const SplashPage = () => {
     const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const SplashPage = () => {
             <div className="banner-container">
                 <div className="left-banner">
                     <h1 className="banner-h1">Easy-to-Use Online Form Builder For Every Organization</h1>
-                    <p>Cloud-based form builder that makes it easy to create registration forms, application forms, surveys, contact forms, payment forms and more.</p>
+                    <p>A form builder that makes it easy to create registration forms, application forms, surveys, contact forms and more.</p>
                     <div className="banner-btn-row">
                         <button type="button" className="sign-up-free" onClick={handleSignUp}>SIGN UP FREE</button>
                         <button type="button" className="live-demo" onClick={handleDemo}>LIVE DEMO</button>
@@ -52,9 +52,10 @@ const SplashPage = () => {
                     <img className="dinosaur-form-img" src="https://www.wufoo.com/wp-content/uploads/2019/10/wufoo-online-form-builder.png" alt="Dinosaurs building an html form"/>
                 {/* </div> */}
             </div>
-            <nav className="contact-me-nav">
-
-            </nav>
+            <footer>
+                <img className="github-icon" src="../../../../static/github.png" alt="Logo for Github website" style={{height: "50px"}}></img>
+                <img className="linkedin-icon" src="../../../../static/linkedin.png" alt="Logo for LinkedIn website" style={{height: "50px"}}></img>
+            </footer>
         </div>
     )
 }
