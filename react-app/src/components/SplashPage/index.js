@@ -22,6 +22,16 @@ const SplashPage = () => {
         dispatch(login('demo@aa.io', 'password'));
     };
 
+    const handleGithub = () => {
+        window.location.href = "https://github.com/chrisbritton842";
+        return null;
+    };
+
+    const handleLinkedin = () => {
+        window.location.href = "https://www.linkedin.com/in/christopher-britton-3b94a2123/";
+        return null;
+    };
+
     if (user) {
         return <Redirect to={`/forms/${user.id}`} />;
     }
@@ -53,8 +63,8 @@ const SplashPage = () => {
                 {/* </div> */}
             </div>
             <footer>
-                <img className="github-icon" src="../../../../static/github.png" alt="Logo for Github website" style={{height: "50px"}}></img>
-                <img className="linkedin-icon" src="../../../../static/linkedin.png" alt="Logo for LinkedIn website" style={{height: "50px"}}></img>
+                <img className="github-icon" src="../../../../static/github.png" alt="Logo for Github website" style={{height: "50px"}} onClick={handleGithub}></img>
+                <img className="linkedin-icon" src="../../../../static/linkedin.png" alt="Logo for LinkedIn website" style={{height: "50px"}} onClick={handleLinkedin}></img>
             </footer>
         </div>
     )
