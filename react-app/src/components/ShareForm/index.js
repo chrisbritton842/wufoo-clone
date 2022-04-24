@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as formActions from '../../store/forms';
 import { ReactComponent as LinkIcon } from './link.svg';
+import './ShareForm.css';
 
 const SharePage = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     let { formId } = useParams();
     const parsedFormId = parseInt(formId, 10);
@@ -21,14 +23,18 @@ const SharePage = () => {
         return dispatch(formActions.getForms(user.id))
     }, [dispatch, user]);
 
+    const handleLogo = () => {
+        history.push('/');
+    };
+
     return (
         <div className="share-form-wrapper">
             <nav className="user-forms-header">
                 <ul id="menu">
                     <li className="logo-li">
-                        <Link to="/">
-
-                        </Link>
+                        <div className="svg-logo">
+                            <img className="rare-form-logo-user-forms" src="../../../../static/signup.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                        </div>
                     </li>
                     <li>
                         <div className="avatar-circle-div">
@@ -46,16 +52,16 @@ const SharePage = () => {
             </nav>
             <div className="top-band">
                 <div className="h1-div">
-                    <h1>{userForm?.title}</h1>
+                    <h1 className="share-title">{userForm?.title}</h1>
                 </div>
             </div>
             <div className="share-link-area">
-                <h2>Share a link to your form</h2>
+                <h2 className="share-a-link">Share a link to your form</h2>
                 <div className="main-link-div">
                     <div className="share-link">
-                        <LinkIcon style={{height: '15px'}}/>
-                        <input type="url" value={`${window.location.origin}/form/${formId}`}></input>
-                        <button type="button" data-url={`${window.location.origin}/form/${formId}`} onClick={e => navigator.clipboard.writeText(e.target.dataset.url)}>COPY</button>
+                        <LinkIcon className="link-icon"/>
+                        <input className="url-share" type="url" value={`${window.location.origin}/form/${formId}`}></input>
+                        <button className="share-url-copy" type="button" data-url={`${window.location.origin}/form/${formId}`} onClick={e => navigator.clipboard.writeText(e.target.dataset.url)}>COPY</button>
                     </div>
                 </div>
 
