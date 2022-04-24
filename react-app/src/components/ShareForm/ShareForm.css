@@ -1,4 +1,4 @@
-.top-band{
+.top-share-band{
     border-bottom: 1px solid #e6e9ee;
     box-sizing: border-box;
     color: #434a54;
@@ -7,7 +7,7 @@
     list-style: none;
 }
 
-.h1-div{
+.h1-share-div{
     -webkit-font-smoothing: antialiased;
     margin: 0 auto;
     max-width: 1400px;

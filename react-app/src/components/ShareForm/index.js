@@ -50,8 +50,8 @@ const SharePage = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="top-band">
-                <div className="h1-div">
+            <div className="top-share-band">
+                <div className="h1-share-div">
                     <h1 className="share-title">{userForm?.title}</h1>
                 </div>
             </div>

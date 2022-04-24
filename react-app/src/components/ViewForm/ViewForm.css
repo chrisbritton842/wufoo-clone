@@ -1,0 +1,47 @@
+.view-form-stage{
+    display: flex;
+    justify-content: center;
+}
+
+.view-form-main{
+    background-color: #fff;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 0 5px;
+    color: #000;
+    display: block;
+    font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    text-align: left;
+    width: 640px;
+
+    /* @media only screen and (max-width: 480px) {
+      #container, #footer {
+        width: 100%;
+        margin-left: auto;
+        margin-bottom: 0px;
+        margin-right: auto;
+        margin-top: 0px;
+      }
+      #container, form li.focused {
+        box-shadow: none;
+        border-image-repeat: initial;
+        border-image-outset: initial;
+        border-image-width: initial;
+        border-image-slice: initial;
+        border-image-source: initial;
+        border-left-color: initial;
+        border-bottom-color: initial;
+        border-right-color: initial;
+        border-top-color: initial;
+        border-left-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-top-style: none;
+        border-left-width: initial;
+        border-bottom-width: initial;
+        border-right-width: initial;
+        border-top-width: initial;
+      }
+    } */
+}

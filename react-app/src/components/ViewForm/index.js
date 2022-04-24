@@ -64,11 +64,20 @@ const ViewForm = () => {
         dispatch(formActions.getForms(user.id))
     }, [dispatch, user]);
 
+    const handleLogo = () => {
+        history.push('/');
+    };
+
     return (
         <div className="build-form-wrapper">
             <div className="build-container">
-                <div className="form-stage">
-                    <div className="form-main">
+                <div className="view-form-stage">
+                    <div className="view-form-main">
+                        <div className="form-view-logo-div">
+                            <div className="svg-logo">
+                                <img className="rare-form-logo" src="../../../../static/view_form.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                            </div>
+                        </div>
                         <div className="form-info-div">
                             <h2>{title}</h2>
                             <div>{description}</div>
@@ -129,7 +138,6 @@ const ViewForm = () => {
                     </div>
                 </div>
             </div>
-            <footer></footer>
         </div>
     )
 }
