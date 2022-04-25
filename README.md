@@ -1,28 +1,28 @@
-# Flask React Project
+# RareForm
 
-This is the starter for the Flask React project.
+This is a "lite" clone of the website Wufoo by SurveyMonkey. RareForm allows you to create, edit, view, and share forms with friends and colleagues.
 
 ## Getting started
-### Dev Containers (M1 Users, follow this guide)
+### If you are a mac user using the M1 chip, please follow this setup guide:
 
-1. Make sure you have the [Microsoft Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed. 
+1. Install the following containers: [Microsoft Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). 
 2. Make sure you have [Docker](https://www.docker.com/products/docker-desktop/) installed on your computer. 
-3. Clone the repository (only this branch)
+3. Open VS Code and Clone only this branch of the repository:
    ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
-4. Open the repo in VS Code. 
-5. Click "Open in Container" when VS Code prompts to open container in the bottom right hand corner. 
-6. **Be Patient!** The initial install will take a LONG time, it's building a container that has postgres preconfigured and even installing all your project dependencies. (For both flask and react!)
+   git clone https://github.com/chrisbritton842/wufoo-clone.git 
+   ``` 
+4. Click "Open in Container" when VS Code prompts to open container in the bottom right hand corner. This will take some time the first time but will be faster afterwords since much of the process will be cached!
 
-   **Note:** This will take much less time on future starts because everything will be cached.
+5. Create a `.env` file based on `.env.example` in both the root directory and the *react-app* directory before running the app. 
 
-7. Once everything is up, be sure to make a `.env` file based on `.env.example` in both the root directory and the *react-app* directory before running your app. 
-
-8. Get into your pipenv, migrate your database, seed your database, and run your flask app
+6. Use the following commands to start your virtual environment (pipenv), migrate your database, seed your database, and run the flask app:
 
    ```bash
    pipenv shell
+   ```
+   
+   ```bash
+   flask db migrate
    ```
 
    ```bash
@@ -37,32 +37,35 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-9. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+7. To run the React App in development, see the following [README](./react-app/README.md) inside the `react-app` directory.
 
 <br>
 
-### Standard (Traditional)
+### If NOT using the M1 chip, follow the steps below:
 
-1. Clone this repository (only this branch)
+1. Open VS Code and clone only this branch of the repository:
 
    ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+   git clone https://github.com/chrisbritton842/wufoo-clone.git   ```
 
-2. Install dependencies
+2. Install dependencies:
 
       ```bash
       pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
       ```
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+3. Use the `.env.example` to create a `.env` in the root directory using the correct development environment settings.
+ 
+4. Set up your PostgreSQL user, password and database according to your .env settings.
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+5. Use the following commands to start your virtual environment (pipenv), migrate your database, seed your database, and run the flask app:
 
    ```bash
    pipenv shell
+   ```
+   
+   ```bash
+   flask db migrate
    ```
 
    ```bash
@@ -77,17 +80,42 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
+6. To run the React App in development, see the following [README](./react-app/README.md) inside the `react-app` directory.
 
 
-*IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
+## Deployment to Heroku
 
-## Helpful commands
+### Follow these steps to deploy to Heroku:
+
+1. Write your Dockerfile. This application is configured with Github Actions so that Github will automatically pull your code, package, and push it to Heroku. It will then release the new image and run db migrations. Please use the notes notes found in this [docker file](./Dockerfile) to code out the Docker File.
+
+2. It is recommended that you append the following code to your YAML file in .github/workflows so that your seeder files will automatically update when pushing to the main branch:
+
+```bash
+      - name: Clear Seed Data
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku run -a ${{ secrets.HEROKU_APP_NAME }} flask seed undo
+
+      - name: Seed New Data
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku run -a ${{ secrets.HEROKU_APP_NAME }} flask seed all
+        ```
+        
+3. Make sure you have installed the Heroku Postgres add-on for the application in your Heroku account.
+
+4. Configure the production environment variables in your Heroku app settings. Set a `DATABASE_URL` key to the autogenerated value from the Heroku Postgres add-on. Set a `SECRET_KEY` to a random string.
+
+5. Go to your Github Actions Secrets at the following address: *github.com/userID/repoName/settings/secrets/actions*. Set the key, `HEROKU_API_KEY` to a Heroku Oauth Token. To get the Heroku Oauth Token, run the following command in your terminal already authenticated to the Heroku CLI and pull out the string on the Token key.
+
+```bash
+   heroku authorizations:create 
+   ```
+   
+ Set the key, `HEROKU_APP_NAME` to the name of the app.
+ 
+ ## Helpful commands
 |    Command            |    Purpose    |
 | -------------         | ------------- |
 | `pipenv shell`        | Open your terminal in the virtual environment and be able to run flask commands without a prefix |
@@ -98,32 +126,3 @@ This is the starter for the Flask React project.
 | `heroku login -i`      | Authenticate your heroku-cli using the command line. Drop the -i to authenticate via the browser |
 | `heroku authorizations:create` | Once authenticated, use this to generate an Oauth token |
 | `heroku run -a <app name>` | Run a command from within the deployed container on Heroku |
-
-## Deploy to Heroku
-
-### Abstract
-This repo comes configured with Github Actions. When you push to your main branch, Github will automatically pull your code, package and push it to Heroku, and then release the new image and run db migrations. 
-
-### Writing your Dockerfile
-In order for the Github action to work effectively, it must have a configured docker file. In order to effectively deploy your site you need to code out the notes found in this [docker file](./Dockerfile)
-
-### Configuring Production Environment Variables 
-
-1. In your Heroku app settings you should have two environment variables set. 
-
-   |    Key          |    Value    |
-   | -------------   | ----------- |
-   | `DATABASE_URL`  | Autogenerated when adding postgres to Heroku app |
-   | `SECRET_KEY`    | Random string full of entropy |
-
-2. In your Github Actions Secrets you should have two environment variables set. You can find this webpage at the following address: *github.com/userID/repoName/settings/secrets/actions*
-
-   |    Key            |    Value    |
-   | -------------     | ----------- |
-   | `HEROKU_API_KEY`  | Heroku Oauth Token |
-   | `HEROKU_APP_NAME` | Heroku app name    |
-
-3. To get an Oauth token for Heroku, run the following command in your terminal already authenticated to the Heroku CLI and pull out the string on the Token key. 
-   ```bash
-   heroku authorizations:create 
-   ```
