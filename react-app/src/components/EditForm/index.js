@@ -130,11 +130,29 @@ const EditForm = () => {
     };
 
     const handleViewForm = () => {
-        history.push(`/form/${formId}`);
+        const missingLabel = labels.includes("");
+        const deleted = inputs.every(el => el === 0);
+        if (!missingLabel && title && inputs.length && !deleted) {
+            dispatch(updateForm(title, inputs, labels, description, parsedFormId, user.id));
+            return history.push(`/form/${formId}/${user.id}`);
+        }
+
+        if (!inputs.length || deleted) setShowInputMessage(true);
+        if (!title) setShowTitleMessage(true);
+        if (missingLabel) setShowLabelMessage(true);
     };
 
     const handleShareForm = () => {
-        history.push(`/forms/${formId}/share`);
+        const missingLabel = labels.includes("");
+        const deleted = inputs.every(el => el === 0);
+        if (!missingLabel && title && inputs.length && !deleted) {
+            dispatch(updateForm(title, inputs, labels, description, parsedFormId, user.id));
+            return history.push(`/forms/${formId}/${user.id}/share`);
+        }
+
+        if (!inputs.length || deleted) setShowInputMessage(true);
+        if (!title) setShowTitleMessage(true);
+        if (missingLabel) setShowLabelMessage(true);
     };
 
     const handleLogo = () => {
