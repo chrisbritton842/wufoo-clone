@@ -91,7 +91,7 @@ This is a "lite" clone of the website Wufoo by SurveyMonkey. RareForm allows you
 
 2. It is recommended that you append the following code to your YAML file in .github/workflows so that your seeder files will automatically update when pushing to the main branch:
 
-```bash
+      ```bash
       - name: Clear Seed Data
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -109,7 +109,7 @@ This is a "lite" clone of the website Wufoo by SurveyMonkey. RareForm allows you
 
 5. Go to your Github Actions Secrets at the following address: *github.com/userID/repoName/settings/secrets/actions*. Set the key, `HEROKU_API_KEY` to a Heroku Oauth Token. To get the Heroku Oauth Token, run the following command in your terminal already authenticated to the Heroku CLI and pull out the string on the Token key.
 
-```bash
+   ```bash
    heroku authorizations:create 
    ```
    
