@@ -67,7 +67,7 @@ const UserForms = () => {
 
     const handleView = (e) => {
         const formId = parseInt(e.target.dataset.formId);
-        history.push(`/form/${formId}`);
+        history.push(`/form/${formId}/${user.id}`);
     };
 
     const handleEdit = (e) => {
