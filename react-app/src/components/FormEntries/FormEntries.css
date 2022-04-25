@@ -1,0 +1,182 @@
+.form-entries-h1-div{
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+}
+
+.form-entries-h1{
+    align-items: center;
+    box-sizing: border-box;
+    color: #434a54;
+    display: flex;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    list-style: none;
+}
+
+.form-entries-area{
+    background-color: #f6f7fb;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+    padding: 12px 0 64px;
+    width: 100%;
+}
+
+.form-entries-grid{
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    color: #434a54;
+    display: flex;
+    flex-direction: column;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.entries-table-div{
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+    margin-top: 12px;
+    max-width: 100%;
+}
+
+.form-entries-table{
+    border-collapse: collapse;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+    position: relative;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.form-entries-thead{
+    border-collapse: collapse;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+}
+
+.form-entries-id-th{
+    background-color: #656d78;
+    border-collapse: collapse;
+    border-right: 1px solid #fff;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    list-style: none;
+    padding: 0 12px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    width: 40px;
+}
+
+.form-entries-middle-th{
+    background-color: #656d78;
+    border-collapse: collapse;
+    border-right: 1px solid #fff;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    list-style: none;
+    padding: 0 12px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    width: 201px;
+}
+
+.form-entries-tbody{
+    border-collapse: collapse;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+}
+
+.form-entries-body-tr{
+    border-bottom: 1px solid #aab2bd;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 15px;
+    list-style: none;
+}
+
+.form-entries-td-id{
+    background-color: #fff;
+    border-collapse: collapse;
+    border-color: #fff;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 14px;
+    list-style: none;
+    padding: 16px 12px;
+    text-align: center;
+    white-space: nowrap;
+    width: 40px;
+}
+
+.form-entries-td-created-at{
+    background-color: #fff;
+    border-collapse: collapse;
+    border-color: #fff;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 14px;
+    list-style: none;
+    padding: 16px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.form-entries-td{
+    background-color: #fff;
+    border-collapse: collapse;
+    border-color: #fff;
+    border-spacing: 2px;
+    box-sizing: border-box;
+    color: #434a54;
+    font-family: "National 2","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic Pro",游ゴシック,游ゴシック体,YuGothic,"Yu Gothic","ＭＳ ゴシック","MS Gothic",sans-serif;
+    font-size: 14px;
+    list-style: none;
+    padding: 16px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
