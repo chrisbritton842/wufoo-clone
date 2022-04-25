@@ -18,6 +18,8 @@ const BuildForm = () => {
     const [selectedInputType, setSelectedInputType] = useState(null);
     const [selectedFieldLabel, setSelectedFieldLabel] = useState('');
     const [showInputMessage, setShowInputMessage] = useState(false);
+    const [showTitleMessage, setShowTitleMessage] = useState(false);
+    const [showLabelMessage, setShowLabelMessage] = useState(false);
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());
@@ -73,6 +75,7 @@ const BuildForm = () => {
         setSelectedInputType(currentType);
         setSelectedFieldLabel(name);
         setDisplayedPanel('b');
+        setShowLabelMessage(false);
     };
 
     const handleEdit = () => {
@@ -116,12 +119,16 @@ const BuildForm = () => {
     };
 
     const handleSaveForm = () => {
+        const missingLabel = labels.includes("");
         const deleted = inputs.every(el => el === 0);
-        if (inputs.length && !deleted) {
+        if (!missingLabel && title && inputs.length && !deleted) {
             dispatch(createForm(title, inputs, labels, description, user.id));
             return history.push(`/forms/${user.id}`);
         }
-        setShowInputMessage(true);
+
+        if (!inputs.length || deleted) setShowInputMessage(true);
+        if (!title) setShowTitleMessage(true);
+        if (missingLabel) setShowLabelMessage(true);
     };
 
     const handleLogo = () => {
@@ -222,13 +229,23 @@ const BuildForm = () => {
                         )}
                     </div>
                     <div className="form-main">
-                        <div className="form-info-div" onClick={() => setDisplayedPanel('c')}>
+                        <div className="form-info-div" onClick={() => {setDisplayedPanel('c'); setShowTitleMessage(false);}}>
                             <h2 className="form-info-title">{title}</h2>
                             <div className="form-info-description">{description}</div>
                         </div>
                         {showInputMessage && (
                             <div>
                                 <p>Please add a field to your form before saving. You can always edit your title, description, and labels later!</p>
+                            </div>
+                        )}
+                        {showTitleMessage && (
+                            <div>
+                                <p>Title cannot be blank!</p>
+                            </div>
+                        )}
+                        {showLabelMessage && (
+                            <div>
+                                <p>Labels cannot be blank!</p>
                             </div>
                         )}
                         <div className="form-inputs">
