@@ -61,8 +61,8 @@ const UserForms = () => {
     }
 
     const handleShare = (e) => {
-        const formId = parseInt(e.target.dataset.formId);
-        history.push(`/forms/${formId}/share`);
+        const formId = parseInt(e.currentTarget.dataset.formId);
+        history.push(`/forms/${formId}/${user.id}/share`);
     };
 
     const handleView = (e) => {

@@ -50,7 +50,7 @@ function App() {
           <Route path='/signup' exact={true}>
             <SignUpForm />
           </Route>
-          <Route path='/form/:formId' exact={true}>
+          <Route path='/form/:formId/:userId' exact={true}>
             <ViewForm />
           </Route>
           <Route path='/endpage' exact={true}>
@@ -65,7 +65,7 @@ function App() {
           <ProtectedRoute path='/edit/:formId' exact={true} >
             <EditForm />
           </ProtectedRoute>
-          <ProtectedRoute path='/forms/:formId/share' exact={true}>
+          <ProtectedRoute path='/forms/:formId/:userId/share' exact={true}>
             <SharePage />
           </ProtectedRoute>
           <ProtectedRoute path='/entry-manager/:formId' exact={true}>

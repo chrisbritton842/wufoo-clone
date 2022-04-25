@@ -9,11 +9,13 @@ import './ShareForm.css';
 const SharePage = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    let { formId } = useParams();
+    let { formId, userId } = useParams();
     const parsedFormId = parseInt(formId, 10);
     const user = useSelector((state) => state.session.user);
     const forms = useSelector((state) => state.forms.forms);
     const userForm = forms?.find(form => form.id === parsedFormId);
+
+    console.log('User ID: ', userId)
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());
@@ -60,8 +62,8 @@ const SharePage = () => {
                 <div className="main-link-div">
                     <div className="share-link">
                         <LinkIcon className="link-icon"/>
-                        <input className="url-share" type="url" value={`${window.location.origin}/form/${formId}`}></input>
-                        <button className="share-url-copy" type="button" data-url={`${window.location.origin}/form/${formId}`} onClick={e => navigator.clipboard.writeText(e.target.dataset.url)}>COPY</button>
+                        <input className="url-share" type="url" value={`${window.location.origin}/form/${formId}/${userId}`}></input>
+                        <button className="share-url-copy" type="button" data-url={`${window.location.origin}/form/${formId}/${userId}`} onClick={e => navigator.clipboard.writeText(e.target.dataset.url)}>COPY</button>
                     </div>
                 </div>
 

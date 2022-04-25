@@ -6,7 +6,7 @@ import * as entryActions from '../../store/entries';
 import './ViewForm.css'
 
 const ViewForm = () => {
-    let { formId } = useParams();
+    let { formId, userId } = useParams();
     const parsedFormId = parseInt(formId, 10);
     const forms = useSelector((state) => state.forms.forms);
     const user = useSelector((state) => state.session.user);
@@ -61,8 +61,8 @@ const ViewForm = () => {
     };
 
     useEffect(() => {
-        dispatch(formActions.getForms(user.id))
-    }, [dispatch, user]);
+        dispatch(formActions.getForms(userId))
+    }, [dispatch, userId]);
 
     const handleLogo = () => {
         history.push('/');
