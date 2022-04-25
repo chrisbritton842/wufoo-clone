@@ -74,66 +74,66 @@ const ViewForm = () => {
                 <div className="view-form-stage">
                     <div className="view-form-main">
                         <div className="form-view-logo-div">
-                            <div className="svg-logo">
-                                <img className="rare-form-logo" src="../../../../static/view_form.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
+                            <div className="svg-view-logo">
+                                <img className="view-rare-form-logo" src="../../../../static/view_form.png" alt="Logo for RareForm website" style={{height: "50px"}} onClick={handleLogo}></img>
                             </div>
                         </div>
-                        <div className="form-info-div">
-                            <h2>{title}</h2>
-                            <div>{description}</div>
+                        <div className="view-form-info-div">
+                            <h2 className="view-form-title">{title}</h2>
+                            <div className='view-form-description'>{description}</div>
                         </div>
                         <div className="form-inputs">
                             {inputs?.map((input, idx) => {
                                 return (
                                     <>
                                         {input === 1 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="text" data-label={labels[idx]} value={text[labels[idx]]} onChange={handleTextInput}></input>
+                                            <div className="view-form-text-div">
+                                                <label className="view-form-text-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-text-input" id={`${idx}`} type="text" data-label={labels[idx]} value={text[labels[idx]]} onChange={handleTextInput}></input>
                                             </div>
                                         )}
                                         {input === 2 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <textarea id={`${idx}`} data-label={labels[idx]} value={textArea[labels[idx]]} onChange={handleTextAreaInput}></textarea>
+                                            <div className="view-form-textarea-div">
+                                                <label className="view-form-textarea-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <textarea className="view-form-textarea-input" id={`${idx}`} data-label={labels[idx]} value={textArea[labels[idx]]} onChange={handleTextAreaInput}></textarea>
                                             </div>
                                         )}
                                         {input === 3 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="number" data-label={labels[idx]} value={number[labels[idx]]} onChange={handleNumberInput}></input>
+                                            <div className="view-form-number-div">
+                                                <label className="view-form-number-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-number-input" id={`${idx}`} type="number" data-label={labels[idx]} value={number[labels[idx]]} onChange={handleNumberInput}></input>
                                             </div>
                                         )}
                                         {input === 4 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="url" data-label={labels[idx]} value={url[labels[idx]]} onChange={handleUrlInput}></input>
+                                            <div className="view-form-url-div">
+                                                <label className="view-form-url-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-url-input" id={`${idx}`} type="url" data-label={labels[idx]} value={url[labels[idx]]} onChange={handleUrlInput}></input>
                                             </div>
                                         )}
                                         {input === 5 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="email" data-label={labels[idx]} value={email[labels[idx]]} onChange={handleEmailInput}></input>
+                                            <div className="view-form-email-div">
+                                                <label className="view-form-email-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-email-input" id={`${idx}`} type="email" data-label={labels[idx]} value={email[labels[idx]]} onChange={handleEmailInput}></input>
                                             </div>
                                         )}
                                         {input === 6 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="telephone" data-label={labels[idx]} value={telephone[labels[idx]]} onChange={handleTelephoneInput}></input>
+                                            <div className="view-form-phone-div">
+                                                <label className="view-form-phone-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-phone-input" id={`${idx}`} type="telephone" data-label={labels[idx]} value={telephone[labels[idx]]} onChange={handleTelephoneInput}></input>
                                             </div>
                                         )}
                                         {input === 7 && (
-                                            <div>
-                                                <label for={`${idx}`}>{labels[idx]}</label>
-                                                <input id={`${idx}`} type="date" data-label={labels[idx]} value={date[labels[idx]]} onChange={handleDateInput}></input>
+                                            <div className="view-form-date-div">
+                                                <label className="view-form-date-label" for={`${idx}`}>{labels[idx]}</label>
+                                                <input className="view-form-date-input" id={`${idx}`} type="date" data-label={labels[idx]} value={date[labels[idx]]} onChange={handleDateInput}></input>
                                             </div>
                                         )}
                                     </>
                                 )
                             })}
                         </div>
-                        <div className="submit-button">
-                            <button type="submit" onClick={handleSubmitForm}>Submit</button>
+                        <div className="view-form-submit-btn-div">
+                            <button className="view-form-submit-btn" type="submit" onClick={handleSubmitForm}>Submit</button>
                         </div>
                     </div>
                 </div>

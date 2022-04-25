@@ -45,3 +45,510 @@
       }
     } */
 }
+
+.form-view-logo-div{
+
+}
+
+.svg-view-logo{
+    /* border-bottom: 1px solid #ccd0d9;
+    box-sizing: border-box;
+    color: #000;
+    font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 10px;
+    min-height: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    width: 100%; */
+
+    border-bottom: 1px solid #ccd0d9;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    margin: 12px 0 36px;
+    padding: 0 1% 1.1em;
+    text-align: left;
+}
+
+.view-rare-form-logo{
+    cursor: pointer;
+}
+
+.view-form-info-div{
+    border-bottom: 1px solid #ccd0d9;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    margin: 0 0 36px;
+    padding: 0 1% 1.1em;
+    text-align: left;
+}
+
+.view-form-title{
+    box-sizing: border-box;
+    clear: left;
+    color: #282828;
+    font-family: "National 2",sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    margin: 40px 0 20px;
+    text-align: left;
+}
+
+.view-form-description{
+    box-sizing: border-box;
+    color: #282828;
+    font-family: "National 2",sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 135%;
+    padding-bottom: 30px;
+    text-align: left;
+}
+
+.view-form-text-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-text-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-text-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-textarea-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    transition: background-color 350ms ease-out;
+    width: auto;
+}
+
+.view-form-textarea-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-textarea-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    height: 10em;
+    list-style: none;
+    margin: 0;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px 14px;
+    white-space: pre-wrap;
+    width: 293px;
+    word-wrap: break-word;
+}
+
+.view-form-number-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-number-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-number-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-url-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-url-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-url-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-email-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-email-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-email-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-phone-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-phone-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-phone-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-date-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-date-label{
+    border-style: none;
+    box-sizing: border-box;
+    color: #282828;
+    cursor: default;
+    display: block;
+    font-family: "National 2",sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .13px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.view-form-date-input{
+    background-color: #fff;
+    background-image: none;
+    background-position: center top;
+    background-repeat: repeat no-repeat;
+    border: 1px solid #ccd0d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: text;
+    font-family: "National 2",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0;
+    padding: 11px 14px 9px;
+    position: relative;
+    width: 50%;
+}
+
+.view-form-submit-btn-div{
+    background-color: transparent;
+    box-sizing: border-box;
+    clear: both;
+    color: #000;
+    font-family: "National 2",sans-serif;
+    font-size: 13px;
+    letter-spacing: .13px;
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+
+.view-form-submit-btn{
+    appearance: none;
+    background-color: #007faa;
+    border: 1px solid #007faa;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-family: "National 2",sans-serif;
+    font-size: 120%;
+    font-weight: 400;
+    list-style: none;
+    margin: 10px;
+    overflow: visible;
+    padding: 15px 30px;
+    text-align: center;
+    white-space: pre;
+    width: auto;
+}
