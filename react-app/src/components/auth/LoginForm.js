@@ -58,16 +58,19 @@ const LoginForm = () => {
     setShowSignup(false)
   }
 
-  const pRegex = new RegExp(/[a-zA-Z0-9]{7,}/);
-  const uRegex = new RegExp(/[a-zA-Z0-9]/);
+  const eRegex = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
 
-  if (email.includes('@')) {
+  if (eRegex.test(email)) {
     validEmail = true;
   };
+
+  const pRegex = new RegExp(/^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/);
 
   if (pRegex.test(password)) {
     validPassword = true;
   };
+
+  const uRegex = new RegExp(/[a-zA-Z0-9]/);
 
   if (uRegex.test(username)) {
     validUsername = true;

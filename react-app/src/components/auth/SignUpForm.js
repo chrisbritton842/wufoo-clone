@@ -57,8 +57,6 @@ const SignUpForm = () => {
     validUsername = true;
   };
 
-
-
   if (user) {
     return <Redirect to={`/forms/${user.id}`} />;
   };
