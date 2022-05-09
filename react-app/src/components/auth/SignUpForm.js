@@ -43,7 +43,7 @@ const SignUpForm = () => {
     validEmail = true;
   };
 
-  const pRegex = new RegExp(/[a-zA-Z0-9]{7,}/);
+  const pRegex = new RegExp(/^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/);
 
   if (pRegex.test(password)) {
     validPassword = true;
