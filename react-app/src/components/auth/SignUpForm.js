@@ -39,7 +39,9 @@ const SignUpForm = () => {
     setPassword(e.target.value);
   };
 
-  if (email.includes('@')) {
+  const eRegex = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
+
+  if (eRegex.test(email)) {
     validEmail = true;
   };
 
@@ -49,7 +51,7 @@ const SignUpForm = () => {
     validPassword = true;
   };
 
-  const uRegex = new RegExp(/[a-zA-Z0-9]/)
+  const uRegex = new RegExp(/[a-zA-Z0-9]/);
 
   if (uRegex.test(username)) {
     validUsername = true;
