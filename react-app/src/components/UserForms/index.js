@@ -21,9 +21,6 @@ const UserForms = () => {
     const [showSubmenu, setShowSubmenu] = useState(false);
     const [selectedMenuFormId, setSelectedMenuFormId] = useState(null);
 
-    console.log(selectedMenuFormId)
-    console.log(showSubmenu)
-
     let history = useHistory();
 
     const handleLogout = () => {
@@ -83,6 +80,10 @@ const UserForms = () => {
     const handleLogo = () => {
         history.push('/');
     };
+
+    document.addEventListener('click', e => {
+        if ((e.target.className !== "submenu-span") && showSubmenu) setShowSubmenu(false);
+    }, true);
 
     return (
         <div className="user-forms-wrapper">
@@ -175,26 +176,26 @@ const UserForms = () => {
                                             <td className="more-td">
                                                 <div className="more-cell-div">
                                                     <span>
-                                                        <MoreIcon className="more-icon" data-form-id={`${form.id}`} onClick={(e) => { setSelectedMenuFormId(e.currentTarget.dataset.formId); setShowSubmenu(!showSubmenu);}} style={{height: '1.5em', width: '1.5em'}}/>
+                                                        <MoreIcon className="more-icon" data-form-id={`${form.id}`} onClick={(e) => {setSelectedMenuFormId(e.currentTarget.dataset.formId); setShowSubmenu(!showSubmenu);}} style={{height: '1.5em', width: '1.5em'}}/>
                                                     </span>
                                                     {(showSubmenu && selectedMenuFormId === `${form.id}`) && (
                                                         <ul class="more-icon-submenu">
                                                             <li>
                                                                 <section className="submenu-form-div" data-form-id={`${form.id}`}>
                                                                     <ViewIcon style={{height: '20px'}}/>
-                                                                    <span data-form-id={`${form.id}`} onClick={handleView}>View form</span>
+                                                                    <span className="submenu-span" data-form-id={`${form.id}`} onClick={handleView}>View form</span>
                                                                 </section>
                                                             </li>
                                                             <li>
                                                                 <section className="submenu-form-div">
                                                                     <EditIcon style={{height: '20px'}}/>
-                                                                    <span data-form-id={`${form.id}`} onClick={handleEdit}>Edit form</span>
+                                                                    <span className="submenu-span" data-form-id={`${form.id}`} onClick={handleEdit}>Edit form</span>
                                                                 </section>
                                                             </li>
                                                             <li>
                                                                 <section className="submenu-form-div">
                                                                     <DeleteIcon style={{height: '20px'}}/>
-                                                                    <span data-form-id={`${form.id}`} onClick={handleDelete}>Delete form</span>
+                                                                    <span className="submenu-span" data-form-id={`${form.id}`} onClick={handleDelete}>Delete form</span>
                                                                 </section>
                                                             </li>
                                                         </ul>
