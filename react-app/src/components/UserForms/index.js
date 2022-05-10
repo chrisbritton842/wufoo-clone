@@ -152,7 +152,7 @@ const UserForms = () => {
                                                     <div className="form-information">
                                                         <span id={`${form.id}`} className="form-edit-title" onClick={e => handleTitleEdit(e)}>Edit Title</span>
                                                         <div className="recent-entry-date">
-                                                            <span>{`Recent entry:  ${form.entries.length ? form.entries[form.entries.length - 1].created_at : 'N/A'}`}</span>
+                                                            <span>{`Recent entry:  ${form.entries.length ? (new Date(form.entries[form.entries.length - 1].created_at)).toLocaleString() : 'N/A'}`}</span>
                                                         </div>
                                                     </div>
                                                 </div>
