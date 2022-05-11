@@ -30,8 +30,7 @@ const LoginForm = () => {
     if (validEmail && validPassword && validUsername) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
-        console.log("DATA: ", data)
-        setErrors(data)
+        setErrors(data);
       }
     }
   };
