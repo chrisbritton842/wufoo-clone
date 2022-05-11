@@ -1,6 +1,14 @@
 # RareForm
 
-This is a "lite" clone of the website Wufoo by SurveyMonkey. RareForm allows you to create, edit, view, and share forms with friends and colleagues.
+RareForm is a "lite" clone of the website Wufoo by SurveyMonkey where users can create, edit, view, and share forms with friends and colleagues.
+
+| [Live Site](https://rareform.herokuapp.com/) | [MVP Feature List](https://github.com/chrisbritton842/wufoo-clone/wiki/Feature-List) | [Database Schema](https://github.com/chrisbritton842/wufoo-clone/wiki/Database-Schema) | [User Stories](https://github.com/chrisbritton842/wufoo-clone/wiki/User-Stories) | [Wireframes](https://github.com/chrisbritton842/wufoo-clone/wiki/Wireframes) |
+
+## Technologies Used
+
+RareForm is built with a React / Redux frontend and a Python / Flask backend. The app uses a postgresql database and Alembic for its migrations. It is packaged in a docker virtual container and deployed via Heroku.
+
+<img src="https://user-images.githubusercontent.com/81934894/167922066-3a466e42-731b-4bdf-98b4-8b9971991ad2.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167921070-fc1ea1c2-195e-4ff1-8256-876145615140.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167922439-3cfe1d9b-9c37-4b79-8abe-d3737c256dd1.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167922798-02cd9734-80bb-4aa2-bacf-7be7217ffbfc.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167923126-4e788245-c2be-41d9-82b6-7c5110c1b214.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167923547-eb7de355-676b-48ed-8d16-b3296475472d.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167939319-40ad331b-5718-4d67-a410-ed75adfffebd.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167939817-eedb63be-4b28-42ca-86ab-a09a1508807f.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167940488-b4fd2129-f1a2-4a3f-bc48-437e5c7e3315.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167940850-cd9b586d-7e4b-4a44-8665-c1aa80c6c348.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167941258-11a0b456-b4f6-44ab-b984-7665ab3090f7.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167941591-88b41548-0f6b-4d81-862e-624836326836.svg" width="25" height="25"><img src="https://user-images.githubusercontent.com/81934894/167941934-d8a97a26-1cfc-41d6-b997-10950331528e.svg" width="25" height="25">
 
 ## Getting started
 ### If you are a mac user using the M1 chip, please follow this setup guide:
@@ -126,3 +134,5 @@ This is a "lite" clone of the website Wufoo by SurveyMonkey. RareForm allows you
 | `heroku login -i`      | Authenticate your heroku-cli using the command line. Drop the -i to authenticate via the browser |
 | `heroku authorizations:create` | Once authenticated, use this to generate an Oauth token |
 | `heroku run -a <app name>` | Run a command from within the deployed container on Heroku |
+
+## Features Highlight
