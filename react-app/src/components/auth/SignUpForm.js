@@ -21,7 +21,6 @@ const SignUpForm = () => {
     if (validEmail && validPassword && validUsername) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
-        console.log("DATA: ", data)
         setErrors(data)
       }
     }
@@ -39,23 +38,23 @@ const SignUpForm = () => {
     setPassword(e.target.value);
   };
 
-  if (email.includes('@')) {
+  const eRegex = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
+
+  if (eRegex.test(email)) {
     validEmail = true;
   };
 
-  const pRegex = new RegExp(/[a-zA-Z0-9]{7,}/);
+  const pRegex = new RegExp(/^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/);
 
   if (pRegex.test(password)) {
     validPassword = true;
   };
 
-  const uRegex = new RegExp(/[a-zA-Z0-9]/)
+  const uRegex = new RegExp(/[a-zA-Z0-9]/);
 
   if (uRegex.test(username)) {
     validUsername = true;
   };
-
-
 
   if (user) {
     return <Redirect to={`/forms/${user.id}`} />;
@@ -99,7 +98,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>EMAIL ADDRESS</span>
                   {!validEmail && (
-                    <span>Your valid email</span>
+                    <span className="error-handling">Your valid email</span>
                   )}
                 </label>
                 <input
@@ -115,7 +114,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>PASSWORD</span>
                   {!validPassword && (
-                    <span>At least 7 characters with one letter and number</span>
+                    <span className="error-handling">At least 7 characters with one letter and number</span>
                   )}
                 </label>
                 <input
@@ -131,7 +130,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>USERNAME</span>
                   {!validUsername && (
-                    <span>Letters and numbers only please</span>
+                    <span className="error-handling">Letters and numbers only please</span>
                   )}
                 </label>
                 <input

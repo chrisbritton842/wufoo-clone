@@ -209,3 +209,7 @@ section.heading{
     width: 100%;
     word-wrap: break-word;
 }
+
+.error-handling{
+    color: red;
+}

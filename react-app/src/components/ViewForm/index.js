@@ -27,7 +27,6 @@ const ViewForm = () => {
 
     const handleSubmitForm = () => {
         dispatch(entryActions.createEntry(date, email, number, telephone, text, textArea, url, formId));
-        console.log("USER: ", user)
         if (user) return history.push(`/entry-manager/${formId}`);
         history.push('/endpage');
     };

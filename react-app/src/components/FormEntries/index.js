@@ -10,12 +10,9 @@ const FormEntries = () => {
     let { formId } = useParams();
     const parsedFormId = parseInt(formId, 10);
     const forms = useSelector((state) => state.forms.forms);
-    console.log("Forms: ", forms)
     const user = useSelector((state) => state.session.user);
-    console.log("ParsedId: ", parsedFormId)
     const userForm = forms?.find(form => form.id === parsedFormId);
     const dispatch = useDispatch();
-    console.log("Form: ", userForm);
 
     const handleLogout = () => {
         dispatch(sessionActions.logout());

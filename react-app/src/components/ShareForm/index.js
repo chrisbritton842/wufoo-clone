@@ -15,8 +15,6 @@ const SharePage = () => {
     const forms = useSelector((state) => state.forms.forms);
     const userForm = forms?.find(form => form.id === parsedFormId);
 
-    console.log('User ID: ', userId)
-
     const handleLogout = () => {
         dispatch(sessionActions.logout());
     };

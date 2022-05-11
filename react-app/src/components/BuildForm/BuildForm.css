@@ -123,7 +123,6 @@
     background-color: #edffcf;
     border-right: 2px solid #ffc7204f;
     border-bottom: 2px solid #ffc7204f;
-    /* border-bottom-left-radius: 5px; */
     color: #000;
     float: left;
     font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
@@ -131,7 +130,6 @@
     height: auto;
     letter-spacing: .13px;
     margin: 0;
-    margin-top: 0px;
     min-height: 228.66px;
     padding: 0;
     text-align: left;
@@ -275,7 +273,7 @@
     min-width: 70%;
     padding: 10px;
     white-space: pre-wrap;
-    width: 70%;
+    width: 15em;
     word-wrap: break-word;
 }
 
@@ -327,7 +325,7 @@
     margin: 0;
     padding: 3px;
     white-space: pre;
-    width: 100%;
+    width: 168.27px;
 }
 
 .field-edit-delete-btns{
@@ -512,7 +510,7 @@
     font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
     font-size: 13px;
     letter-spacing: .13px;
-    margin: 0;
+    margin: 10px 0 0 15px;
     padding: 0;
     text-align: left;
     width: 620px;
