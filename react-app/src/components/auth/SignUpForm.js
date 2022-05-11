@@ -98,7 +98,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>EMAIL ADDRESS</span>
                   {!validEmail && (
-                    <span>Your valid email</span>
+                    <span className="error-handling">Your valid email</span>
                   )}
                 </label>
                 <input
@@ -114,7 +114,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>PASSWORD</span>
                   {!validPassword && (
-                    <span>At least 7 characters with one letter and number</span>
+                    <span className="error-handling">At least 7 characters with one letter and number</span>
                   )}
                 </label>
                 <input
@@ -130,7 +130,7 @@ const SignUpForm = () => {
                 <label className="signup-label">
                   <span>USERNAME</span>
                   {!validUsername && (
-                    <span>Letters and numbers only please</span>
+                    <span className="error-handling">Letters and numbers only please</span>
                   )}
                 </label>
                 <input

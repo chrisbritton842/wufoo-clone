@@ -100,7 +100,7 @@ const LoginForm = () => {
             <form className="login-login-form" onSubmit={onLogin}>
               <div>
                 {errors.find(e => e.includes('email')) && (
-                  <span>{errors.find(e => e.includes('email')).slice(8)}</span>
+                  <span className="error-handling">{errors.find(e => e.includes('email')).slice(8)}</span>
                 )}
                 <input
                   className='login-email-input'
@@ -123,7 +123,7 @@ const LoginForm = () => {
               </div>
               <div className="password-input-div">
                 {errors.find(e => e.includes('password')) && (
-                  <span>{errors.find(e => e.includes('password')).slice(11)}</span>
+                  <span className="error-handling">{errors.find(e => e.includes('password')).slice(11)}</span>
                 )}
                 <input
                   className='login-password-input'
@@ -143,12 +143,12 @@ const LoginForm = () => {
             <form className="login-signup-form" onSubmit={onSignUp}>
               <div>
                 {errors.map((error, ind) => (
-                  <div key={ind}>{error}</div>
+                  <div key={ind} className="error-handling">{error}</div>
                 ))}
               </div>
               <div>
                 {!validEmail && (
-                  <span>Your valid email</span>
+                  <span className="error-handling">Your valid email</span>
                 )}
                 <input
                   className='login-email-input'
@@ -171,7 +171,7 @@ const LoginForm = () => {
               </div>
               <div className="password-input-div">
                 {!validPassword && (
-                  <span>At least 7 characters with one letter and number</span>
+                  <span className="error-handling">At least 7 characters with one letter and number</span>
                 )}
                 <input
                   className='login-password-input'
@@ -184,7 +184,7 @@ const LoginForm = () => {
               </div>
               <div className="username-input-div">
                 {!validUsername && (
-                    <span>Letters and numbers only please</span>
+                    <span className="error-handling">Letters and numbers only please</span>
                 )}
                 <input
                   className='login-username-input'
@@ -203,39 +203,6 @@ const LoginForm = () => {
         </section>
       </div>
     </div>
-
-
-
-
-
-    // <form onSubmit={onLogin}>
-      // <div>
-      //   {errors.map((error, ind) => (
-      //     <div key={ind}>{error}</div>
-      //   ))}
-      // </div>
-    //   <div>
-    //     <label htmlFor='email'>Email</label>
-    //     <input
-    //       name='email'
-    //       type='text'
-    //       placeholder='EMAIL ADDRESS'
-    //       value={email}
-    //       onChange={updateEmail}
-    //     />
-    //   </div>
-    //   <div>
-    //     <label htmlFor='password'>Password</label>
-        // <input
-        //   name='password'
-        //   type='password'
-        //   placeholder='PASSWORD'
-        //   value={password}
-        //   onChange={updatePassword}
-        // />
-        // <button type='submit'>CONFIRM</button>
-    //   </div>
-    // </form>
   );
 };
 
