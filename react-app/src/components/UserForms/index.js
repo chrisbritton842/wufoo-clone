@@ -81,8 +81,8 @@ const UserForms = () => {
         history.push('/');
     };
 
-    document.addEventListener('click', e => {
-        if ((e.target.className !== "submenu-span") && showSubmenu) setShowSubmenu(false);
+    document.addEventListener('click', () => {
+        setShowSubmenu(false);
     }, true);
 
     return (
