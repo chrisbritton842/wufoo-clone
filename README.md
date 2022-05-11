@@ -136,3 +136,4 @@ RareForm is built with a React / Redux frontend and a Python / Flask backend. Th
 | `heroku run -a <app name>` | Run a command from within the deployed container on Heroku |
 
 ## Features Highlight
+### Dynamic Form Creation
