@@ -136,3 +136,18 @@ RareForm is built with a React / Redux frontend and a Python / Flask backend. Th
 | `heroku run -a <app name>` | Run a command from within the deployed container on Heroku |
 
 ## Features Highlight
+### Dynamic Form Creation
+![2022-05-11 17 03 45](https://user-images.githubusercontent.com/81934894/167985381-c2b1f5b9-58e9-4bec-8b4e-06243dd79160.gif)
+RareForm allows users to dynamically create, read, update, and delete form input elements in creating a new form with no need for page refreshes!
+
+### Share Forms
+![2022-05-11 20 40 04](https://user-images.githubusercontent.com/81934894/167987612-61c00489-ae46-4232-b2f3-4d60305720d6.gif)
+When the user clicks "share" a unique url is generated which can be copied and distributed to friends and co-workers!
+
+### View Form Data
+![2022-05-11 20 47 15](https://user-images.githubusercontent.com/81934894/167988188-764351ee-5bc4-4a1b-8a16-d66bf9126940.gif)
+Click the icon under "All Entries" to view entry data!
+
+## Conclusion
+
+With only a two week window for completion and without experience building a form-builder application, choosing this project was a risk, but a novel and exciting challenge. This was a chance to come up with my own theory of how to let users create their own forms, share them, and read data from them, and then test that theory. I needed to have a very clear picture in my mind of how all the pieces would fit together and be firmly confident that, in theory, the implementation would work. This required me to frontload research into possible datatypes for storing the user generated form inputs as well as plan how input labels and inputs would be related to each other, how state variables would be updated, and many other considerations. In the end, attentive and detailed planning carried this project to completion.
