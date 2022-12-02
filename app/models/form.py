@@ -15,7 +15,7 @@ class Form(db.Model):
     field_type = db.Column(JSONB, nullable=False)
     field_labels = db.Column(JSONB)
     input_labels = db.Column(JSONB)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     all_entries = db.Column(db.Integer)
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
