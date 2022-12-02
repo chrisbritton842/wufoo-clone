@@ -1,13 +1,16 @@
 """create tables
 
 Revision ID: 40fcd07ebc3f
-Revises: 
+Revises:
 Create Date: 2022-04-13 20:31:11.377750
 
 """
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
 revision = '40fcd07ebc3f'
@@ -56,6 +59,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['form_id'], ['forms.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE 'users' SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE 'forms' SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE 'entries' SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
