@@ -1,10 +1,13 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from sqlalchemy import DateTime
 from sqlalchemy.sql import func
 from sqlalchemy.dialects.postgresql import JSONB
 
 class Form(db.Model):
     __tablename__ = 'forms'
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     form_url = db.Column(db.String(255))
